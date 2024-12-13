@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FiMenu, FiSearch, FiChevronDown, FiX } from 'react-icons/fi';
 import { IoCartOutline } from "react-icons/io5";
 import {Link } from 'react-router-dom'
+import { logo, Profile } from '../../assets';
 
 const Navbar = () => {
   
@@ -14,14 +15,14 @@ const Navbar = () => {
   return (
     <div className="w-full bg-white shadow-md px-1">
       {/* Navbar Container */}
-      <div className="flex items-center justify-between px-2 lg:px-8 py-3">
+      <div className="flex items-center justify-between px-2 lg:px-4 xl:px-8 py-3">
         {/* Left: Menu Icon and Logo */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <FiMenu
             className="text-black text-2xl lg:hidden cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
           />
-          <img src="/logo.png" alt="Logo" className="h-10" />
+          <img src={logo} alt="Logo" className="h-10" />
         </div>
 
         {/* Desktop Links */}
@@ -63,7 +64,7 @@ const Navbar = () => {
           </Link>
           <div className="flex items-center gap-1">
             <img
-              src="/profile.jpg"
+              src={Profile}
               alt="Profile"
               className="w-8 h-8 rounded-full object-cover"
             />

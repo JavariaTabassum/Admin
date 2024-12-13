@@ -1,15 +1,12 @@
 import React from "react";
 import { TfiEmail } from "react-icons/tfi";
 import {
-  FaFacebook,
+  FaFacebookF,
   FaInstagram,
   FaTwitter,
-  FaGithub,
-  FaCcPaypal,
-  FaCcApplePay,
-  FaGooglePay,
+  FaGithub
 } from "react-icons/fa";
-import { RiVisaLine, RiMastercardFill  } from "react-icons/ri";
+import {GPay, Paypal, APay, logo, Visa, Mastercard} from '../../assets'
 
 const Footer = () => {
   return (
@@ -38,22 +35,22 @@ const Footer = () => {
 
       {/* Footer Content Section */}
       <div className="py-10 px-4 lg:px-20">
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:py-5 pb-5 lg:items-start border-b-2 border-gray-300 space-y-8 lg:space-y-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:mb-9 lg:py-5 pb-5 lg:items-start border-b-2 border-gray-300 space-y-8 lg:space-y-0">
           {/* Logo and Description */}
           <div className="text-left lg:w-1/4">
-            <div className="h-12 w-36 bg-gray-300 mb-4 hidden lg:flex items-center justify-center">
-              {/* Bee Comfort Logo */}
+            <div className="min-h-20 w-60 mb-4 hidden md:flex items-center justify-start">
+              <img src={logo} alt="" className="xl:h-full xl:w-full w-4/6 h-4/6" />
             </div>
-            <h1 className="lg:hidden flex font-bold mb-2">SHOP.CO</h1>
+            <h1 className="md:hidden flex font-bold mb-2">SHOP.CO</h1>
             <p className="text-gray-600 text-sm">
               We have clothes that suit your style and which you’re proud to
               wear. From women to men.
             </p>
-            <div className="flex justify-start space-x-4 mt-4">
-              <div className="h-11 w-11 flex items-center justify-center rounded-full border-2 border-gray-300"><FaTwitter className="text-black" size={24} /></div>
-              <div className="h-11 w-11 flex items-center justify-center rounded-full "><FaFacebook className="text-black" size={48} /></div>
-              <div className="h-11 w-11 flex items-center justify-center rounded-full border-2 border-gray-300"><FaInstagram className="text-black" size={24} /></div>
-              <div className="h-11 w-11 flex items-center justify-center rounded-full border-2 border-gray-300"><FaGithub className="text-black" size={24} /></div>
+            <div className="flex justify-start space-x-4 mt-4 lg:-mb-12">
+              <div className="h-11 w-11 flex items-center justify-center bg-white rounded-full border-2 border-gray-300"><FaTwitter className="text-black" size={24} /></div>
+              <div className="h-11 w-11 flex items-center justify-center bg-black rounded-full "><FaFacebookF className="text-white" size={24} /></div>
+              <div className="h-11 w-11 flex items-center justify-center bg-white rounded-full border-2 border-gray-300"><FaInstagram className="text-black" size={24} /></div>
+              <div className="h-11 w-11 flex items-center justify-center bg-white rounded-full border-2 border-gray-300"><FaGithub className="text-black" size={24} /></div>
             </div>
           </div>
 
@@ -100,27 +97,18 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-2 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 text-sm hidden lg:flex">
           intimatefashion © 2000-2023, All Rights Reserved
           </p>
-          <div className="flex space-x-4">
-            <RiVisaLine className="text-blue-700" size={40} />
-            <RiMastercardFill 
-              className="text-red-600"
-              size={40}
-            />
-            <FaCcPaypal 
-              className="text-blue-500 hover:text-blue-600"
-              size={40}
-            />
-            <FaCcApplePay
-              className="text-black hover:text-gray-800"
-              size={40}
-            />
-            <FaGooglePay
-              className="text-green-600 hover:text-green-700"
-              size={40}
-            />
+          <p className="text-gray-600 text-sm lg:hidden flex">
+          Shop.co © 2000-2023, All Rights Reserved
+          </p>
+          <div className="flex">
+            <div className="w-12 h-7 items-center justify-center flex"><img className="h-2.5 w-8" src={Visa} alt="" /></div>
+            <div className="w-12 h-7 items-center justify-center flex"><img className="h-3.5 w-8" src={Mastercard} alt="" /></div>
+            <div className="w-12 h-7 items-center justify-center flex"><img className="h-3.5 w-8" src={Paypal} alt="" /></div>
+            <div className="w-12 h-7 items-center justify-center flex"><img className="h-3.5 w-8" src={APay} alt="" /></div>
+            <div className="w-12 h-7 items-center justify-center flex"><img className="h-3.5 w-8" src={GPay} alt="" /></div>
           </div>
         </div>
       </div>
