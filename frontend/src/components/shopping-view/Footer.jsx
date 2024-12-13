@@ -17,7 +17,7 @@ const Footer = () => {
       {/* Newsletter Section */}
       <div className="bg-black text-white py-6 px-4 lg:mx-20 lg:px-14 mx-3 rounded-3xl">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-          <h2 className="text-5xl font-bold text-left mb-4 lg:mb-0">
+          <h2 className="text-4xl font-bold text-left mb-4 lg:mb-0">
             STAY UP TO DATE ABOUT OUR LATEST OFFERS
           </h2>
           <div className="flex flex-col justify-between items-center w-full space-y-4">
