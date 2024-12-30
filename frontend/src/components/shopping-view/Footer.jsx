@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100">
       {/* Newsletter Section */}
-      <div className="bg-black text-white py-6 px-4 lg:mx-20 lg:px-14 mx-3 rounded-3xl">
+      <div className="bg-black text-white py-6 px-5 lg:mx-16 lg:px-10 mx-3 rounded-3xl">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-          <h2 className="text-4xl font-bold text-left mb-4 lg:mb-0">
+          <h2 className="text-3xl md:text-4xl font-bold font-integral w-full text-left mb-4 lg:mb-0">
             STAY UP TO DATE ABOUT OUR LATEST OFFERS
           </h2>
           <div className="flex flex-col justify-between items-center w-full space-y-4">
@@ -34,15 +34,15 @@ const Footer = () => {
       </div>
 
       {/* Footer Content Section */}
-      <div className="py-10 px-4 lg:px-20">
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:mb-9 lg:py-5 pb-5 lg:items-start border-b-2 border-gray-300 space-y-8 lg:space-y-0">
+      <div className="py-10 px-4 lg:px-16">
+        <div className="flex flex-col md:flex-row justify-between items-center lg:mb-9 lg:py-5 pb-5 lg:items-start border-b-2 border-gray-300 space-y-8 lg:space-y-0">
           {/* Logo and Description */}
-          <div className="text-left lg:w-1/4">
+          <div className="text-left lg:w-1/4 md:w-1/2">
             <div className="min-h-20 w-60 mb-4 hidden md:flex items-center justify-start">
               <img src={logo} alt="" className="xl:h-full xl:w-full w-4/6 h-4/6" />
             </div>
-            <h1 className="md:hidden flex font-bold mb-2">SHOP.CO</h1>
-            <p className="text-gray-600 text-sm">
+            <h1 className="md:hidden flex font-bold mb-2 font-integral text-3xl">SHOP.CO</h1>
+            <p className="text-gray-600 text-sm font-satoshi font-normal">
               We have clothes that suit your style and which you’re proud to
               wear. From women to men.
             </p>
@@ -57,8 +57,8 @@ const Footer = () => {
           {/* Links Section */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left text-base">
             <div>
-              <h3 className="font-bold mb-2">COMPANY</h3>
-              <ul className="text-gray-600 space-y-2">
+              <h3 className="font-medium font-satoshi mb-2">COMPANY</h3>
+              <ul className="text-gray-600 font-satoshi font-normal space-y-2">
                 <li>About</li>
                 <li>Features</li>
                 <li>Works</li>
@@ -66,8 +66,8 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-2">HELP</h3>
-              <ul className="text-gray-600 space-y-2">
+              <h3 className="font-medium font-satoshi mb-2">HELP</h3>
+              <ul className="text-gray-600 font-satoshi font-normal space-y-2">
                 <li>Customer Support</li>
                 <li>Delivery Details</li>
                 <li>Terms & Conditions</li>
@@ -75,8 +75,8 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-2">FAQ</h3>
-              <ul className="text-gray-600 space-y-2">
+              <h3 className="font-medium font-satoshi  mb-2">FAQ</h3>
+              <ul className="text-gray-600 font-satoshi font-normal space-y-2">
                 <li>Account</li>
                 <li>Manage Deliveries</li>
                 <li>Orders</li>
@@ -84,8 +84,8 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-2">RESOURCES</h3>
-              <ul className="text-gray-600 space-y-2">
+              <h3 className="font-medium mb-2 font-satoshi">RESOURCES</h3>
+              <ul className="text-gray-600 font-satoshi font-normal space-y-2">
                 <li>Free eBooks</li>
                 <li>Development Tutorial</li>
                 <li>How to - Blog</li>
@@ -97,10 +97,10 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-2 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-          <p className="text-gray-600 text-sm hidden lg:flex">
+          <p className="text-gray-600 text-sm font-satoshi font-normal hidden lg:flex">
           intimatefashion © 2000-2023, All Rights Reserved
           </p>
-          <p className="text-gray-600 text-sm lg:hidden flex">
+          <p className="text-gray-600 text-sm font-satoshi font-normal lg:hidden flex">
           Shop.co © 2000-2023, All Rights Reserved
           </p>
           <div className="flex">

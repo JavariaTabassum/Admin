@@ -5,6 +5,7 @@ import Login from "./pages/shopping-view/LoginSigup/Login";
 import ForgetPassword from "./pages/shopping-view/LoginSigup/ForgetPassword";
 import CreateAccount from "./pages/shopping-view/LoginSigup/CreateAccount";
 import ProfileSetup from "./pages/shopping-view/LoginSigup/ProfileSetup";
+import Home from "./pages/shopping-view/HomePage/Home";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="forget-password" element={<ForgetPassword />} />
         <Route path="create-account" element={<CreateAccount />} />
         <Route path="profile-setup" element={<ProfileSetup />} />
+        <Route path="home" element={<Home />} />
       </Route>
     </Routes>
   );
