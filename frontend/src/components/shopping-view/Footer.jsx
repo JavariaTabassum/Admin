@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100">
       {/* Newsletter Section */}
-      <div className="bg-black text-white py-6 px-5 lg:mx-16 lg:px-10 mx-3 rounded-3xl">
+      <div className="bg-black text-white py-6 px-4 lg:mx-20 lg:px-14 mx-3 rounded-3xl">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <h2 className="text-3xl md:text-4xl font-bold font-integral w-full text-left mb-4 lg:mb-0">
             STAY UP TO DATE ABOUT OUR LATEST OFFERS
@@ -34,8 +34,8 @@ const Footer = () => {
       </div>
 
       {/* Footer Content Section */}
-      <div className="py-10 px-4 lg:px-16">
-        <div className="flex flex-col md:flex-row justify-between items-center lg:mb-9 lg:py-5 pb-5 lg:items-start border-b-2 border-gray-300 space-y-8 lg:space-y-0">
+      <div className="py-10 px-4 lg:px-20">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:py-5 pb-5 lg:items-start border-b-2 border-gray-300 space-y-8 lg:space-y-0">
           {/* Logo and Description */}
           <div className="text-left lg:w-1/4 md:w-1/2">
             <div className="min-h-20 w-60 mb-4 hidden md:flex items-center justify-start">

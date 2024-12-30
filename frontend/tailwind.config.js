@@ -13,8 +13,7 @@ module.exports = {
       },
       fontFamily: {
         'Roboto': ['"Roboto"', 'serif'],
-        satoshi: ['Satoshi', 'sans-serif'],
-        integral: ['Integral CF', 'sans-serif'],
+        'Poppins':['"Poppins"','serif'],
       },
     },
   },

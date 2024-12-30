@@ -1,4 +1,5 @@
 import React from 'react'
+import { fbIcon,google } from "../../../assets/ShoppingAssets";
 
 function CreateAccount() {
   return (
@@ -52,12 +53,13 @@ function CreateAccount() {
         <div className="self-center text-base text-[#767676]">
           or create using
         </div>
-        <div className="border-[#D0D5DD] rounded-sm p-4 border w-full flex items-center justify-center border text-[#344054] text-base font-medium">
-          <img src="" alt="" /> Sign in with Google
-        </div>
-        <div className="border-[#D0D5DD] rounded-sm p-4 border w-full flex items-center justify-center border text-[#344054] text-base font-medium">
-          <img src="" alt="" /> Sign in with Facebook
-        </div>
+       <div className="border-[#D0D5DD] rounded-sm p-4 border w-full flex items-center gap-2 justify-center border text-[#344054] text-base font-medium">
+                
+                            <img src={google} alt="Google Icon" />Sign in with Google
+               </div>
+               <div className="border-[#D0D5DD] rounded-sm p-4 border w-full flex gap-2 items-center justify-center border text-[#344054] text-base font-medium">
+               <img src={fbIcon} alt="Facebook Icon" /> Sign in with Facebook
+               </div>
       </div>
     </div>
     </div>

@@ -42,7 +42,7 @@ const Navbar = () => {
           <Link to="/categories" className="text-black hover:text-primary text-base">Categories</Link>
           <Link to="/on-sale" className="text-black hover:text-primary text-base">On Sale</Link>
           <Link to="/new-arrivals" className="text-black hover:text-primary text-base">New Arrivals</Link>
-          <Link to="/about-us" className="text-black hover:text-primary text-base">About Us</Link>
+          <Link to="/shopping-view/about-us" className="text-black hover:text-primary text-base">About Us</Link>
         </div>
 
         {/* Right: Profile, Cart, Search */}
@@ -55,21 +55,21 @@ const Navbar = () => {
               className="ml-2 bg-transparent text-black outline-none text-sm"
             />
           </div>
-          <button className="bg-primary text-base text-white px-4 py-2 rounded-md font-['Plus Jakarta Sans']">Sign Up</button>
+          <Link to="/create-account" className="bg-primary text-base text-white px-4 py-2 rounded-md font-['Plus Jakarta Sans']">Sign Up</Link>
           <Link
             to="/cart"
             className="bg-primary text-white rounded-full p-2 flex items-center justify-center"
           >
             <IoCartOutline className="text-white text-2xl" />
           </Link>
-          <div className="flex items-center gap-1">
-            <img
+          <Link to="/profile-setup" className="flex items-center gap-1">
+            <img 
               src={Profile}
               alt="Profile"
               className="w-8 h-8 rounded-full object-cover"
             />
             <FiChevronDown className="text-gray-700 ml-1 mt-1" />
-          </div>
+          </Link>
         </div>
       </div>
 

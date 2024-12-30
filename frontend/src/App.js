@@ -6,16 +6,27 @@ import ForgetPassword from "./pages/shopping-view/LoginSigup/ForgetPassword";
 import CreateAccount from "./pages/shopping-view/LoginSigup/CreateAccount";
 import ProfileSetup from "./pages/shopping-view/LoginSigup/ProfileSetup";
 import Home from "./pages/shopping-view/HomePage/Home";
+import ProductDetails from './pages/shopping-view/ProductDetails';
+import AboutUs from "./pages/shopping-view/AboutUs";
 
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Layout />}>
+    <Route path="/" element={<Login />} />
+    <Route path="create-account" element={<CreateAccount />} />
+    <Route path="forget-password" element={<ForgetPassword />} />
+    <Route path="profile-setup" element={<ProfileSetup />} />
+
+  </Route>
+
       <Route path="/shopping-view" element={<Layout />}>
-        <Route path="login" element={<Login />} />
-        <Route path="forget-password" element={<ForgetPassword />} />
-        <Route path="create-account" element={<CreateAccount />} />
-        <Route path="profile-setup" element={<ProfileSetup />} />
-        <Route path="home" element={<Home />} />
+
+       <Route path="" element={<Home/>}/>
+       <Route path="product-details" element={<ProductDetails />} />
+       <Route path="about-us" element={<AboutUs />} />
+        
+        
       </Route>
     </Routes>
   );

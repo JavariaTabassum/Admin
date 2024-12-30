@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { profileImage} from '../../../assets/ShoppingAssets';
 
 function ProfileSetup() {
   return (
@@ -11,10 +12,12 @@ function ProfileSetup() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur condimentum, lacus
           </p>
         </div>
-        <div>
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <p>Add Profile Picture</p>
+        <div className='self-center flex justify-center items-center flex-col gap-2'>
+            <div className='flex justify-center items-center w-[85px] h-[85px] rounded-full relative'>
+              <img src={profileImage} alt="Profile icon" />
+             </div>
+      
+            <p className='text-sm font-medium text-[#535353]'>Add Profile Picture</p>
         </div>
         <div className='gap-[2rem] md:flex md:items-center'>
   {/* First Column (Name & Address) */}
@@ -29,7 +32,7 @@ function ProfileSetup() {
       />
     </div>
     <div>
-      <label className="block text-base text-black">Your Address</label>
+      <label className="block text-base text-black pt-4">Your Address</label>
       <input
         className="mt-2 w-full p-4 rounded-xl border border-black"
         placeholder="Your Address"
@@ -50,7 +53,7 @@ function ProfileSetup() {
       />
     </div>
     <div>
-      <label className="block text-base text-black">City</label>
+      <label className="block text-base text-black pt-4">City</label>
       <input
         className="mt-2 w-full p-4 rounded-xl border border-black"
         placeholder="Florida"
@@ -65,7 +68,7 @@ function ProfileSetup() {
 
         <div className='gap-[2rem] md:flex md:items-center '>
         <div className='md:w-1/2 w-full'>
-          <label className="block text-base text-black">
+          <label className="block text-base text-black pb-3">
           Gender
           </label>
           <select className='w-full p-4 border-black border rounded-xl'> 
