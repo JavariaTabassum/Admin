@@ -3,6 +3,7 @@ import HeroSection from './HeroSection'
 import NewArrivals from './NewArrivals'
 import TopSelling from './TopSelling'
 import BrowseByStyle from './BrowseByStyle'
+import Testimonials from './Testimonials'
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <NewArrivals />
       <TopSelling />
       <BrowseByStyle />
+      <Testimonials />
     </>
   )
 }
