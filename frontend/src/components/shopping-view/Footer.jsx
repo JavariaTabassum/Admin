@@ -10,7 +10,7 @@ import {GPay, Paypal, APay, logo, Visa, Mastercard} from '../../assets'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100">
+    <footer>
       {/* Newsletter Section */}
       <div className="bg-black text-white py-6 px-4 lg:mx-20 lg:px-14 mx-3 rounded-3xl">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -96,7 +96,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-2 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+        <div className="lg:mt-10 mt-2 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
           <p className="text-gray-600 text-sm font-satoshi font-normal hidden lg:flex">
           intimatefashion © 2000-2023, All Rights Reserved
           </p>

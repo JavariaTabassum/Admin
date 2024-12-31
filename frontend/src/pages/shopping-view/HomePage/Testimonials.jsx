@@ -29,8 +29,8 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-6 bg-gray-100 md:px-16 px-10 my-10">
-      <div className="flex lg:justify-between justify-center items-center mb-6"><h2 className="md:text-5xl text-2xl font-bold font-integral text-center">OUR HAPPY CUSTOMERS</h2>
+    <div className="py-6 md:px-16 px-0 my-10">
+      <div className="flex lg:justify-between justify-center items-center mb-6 md:px-0 px-16"><h2 className="md:text-5xl text-2xl font-bold font-integral text-center">OUR HAPPY CUSTOMERS</h2>
       <div className="lg:flex hidden justify-end mt-4">
           <button
             onClick={handlePrev}
@@ -54,7 +54,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="md:min-w-80 min-w-72 flex justify-center"
+                className="md:min-w-80 min-w-72 gap-3 flex justify-center"
               >
                 <TestimonialCard {...testimonial} />
               </div>
