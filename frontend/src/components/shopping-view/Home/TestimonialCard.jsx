@@ -3,7 +3,7 @@ import { FaStar, FaCheckCircle } from "react-icons/fa";
 
 const TestimonialCard = ({ name, feedback }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 flex flex-col items-start">
+    <div className="rounded-lg p-4 flex flex-col items-start">
       <div className="flex items-center mb-2">
         <div className="text-yellow-500 flex gap-2">
           {[...Array(5)].map((_, index) => (

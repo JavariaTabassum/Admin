@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full bg-white shadow-md px-1">
+    <div className="w-full shadow-md px-1">
       {/* Navbar Container */}
       <div className="flex items-center justify-between px-2 lg:px-4 xl:px-8 py-3">
         {/* Left: Menu Icon and Logo */}

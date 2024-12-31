@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="border rounded-lg p-4 shadow-lg hover:shadow-xl transition duration-300">
+    <div className="rounded-lg p-4 transition duration-300">
       <img
         src={imageUrl}
         alt={name}
