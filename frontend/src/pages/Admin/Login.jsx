@@ -34,7 +34,7 @@ const Login = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 relative">
           <div className="w-full max-w-sm">
             <div className="absolute top-0 left-0 flex">
-              <img src={logo} alt="Bee Comfort Logo" className="h-[100px]" />
+              <img src={logo} alt="Bee Comfort Logo" className="h-[50px]" />
             </div>
             <h1 className="text-3xl font-bold text-center mb-6 font-ibm-plex mt-24 sm:mt-24">Login</h1>
             <form onSubmit={handleSubmit}>
