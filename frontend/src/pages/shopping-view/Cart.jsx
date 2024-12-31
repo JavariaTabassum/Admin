@@ -46,7 +46,7 @@ function Cart() {
           <span>Home</span>&gt;
           <span className="text-[#000000]">Cart</span>
         </div>
-        <h2 className='uppercase text-[40px] font-integral font-bold'>your cart</h2>
+        <h2 className='uppercase md:text-[40px] text-[32px] font-integral font-bold pb-2'>your cart</h2>
         <div className='flex lg:flex-row flex-col  gap-6 items-start'>
           {/* Cart items */}
           <div className='flex  border rounded-[20px] border-[#0000001A] flex-col lg:w-[60%] w-full lg:px-4 px-2'>
