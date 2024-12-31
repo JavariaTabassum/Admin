@@ -29,7 +29,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-6 bg-gray-100 md:px-16 px-0 my-10">
+    <div className="py-6 md:px-16 px-0 my-10">
       <div className="flex lg:justify-between justify-center items-center mb-6 md:px-0 px-16"><h2 className="md:text-5xl text-2xl font-bold font-integral text-center">OUR HAPPY CUSTOMERS</h2>
       <div className="lg:flex hidden justify-end mt-4">
           <button

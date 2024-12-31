@@ -4,7 +4,7 @@ import { BiSolidDownArrow } from "react-icons/bi";
 
 function HeroSection() {
   return (
-    <section className="relative w-full bg-white py-8">
+    <section className="relative w-full py-8">
       {/* Desktop View */}
       <div className="hidden lg:flex flex-col lg:flex-row items-center px-4 lg:px-16 lg:justify-between lg:space-x-8">
         {/* Text Section */}
