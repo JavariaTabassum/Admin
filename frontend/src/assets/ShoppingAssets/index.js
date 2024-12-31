@@ -23,6 +23,7 @@ import collectionImage from './AboutAssets/collectionImage.png';
 import customImage1 from './AboutAssets/customImage1.png';
 import customImage2 from './AboutAssets/customImage2.png';
 import image from './AboutAssets/image.png';
+import filterIcon from './AboutAssets/filterIcon.png';
 
 // Contact Images
 import phone from './ContactAssets/phone.svg';
@@ -35,4 +36,4 @@ export {productImage,halfRate,fullRate,Increase,decrease,filter,online,more};
 
 export {phone,email,location};
 
-export {shopIcon,collectionImage,customImage1,customImage2,image};
+export {shopIcon,collectionImage,customImage1,customImage2,image,filterIcon};

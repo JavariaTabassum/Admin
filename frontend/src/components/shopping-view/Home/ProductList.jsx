@@ -1,14 +1,24 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
+import { useNavigate } from "react-router-dom";
+
 
 const ProductList = ({ products }) => {
+  const navigate = useNavigate();
+
+// const handleCardClick = (productId) => {
+//   navigate(`product/${productId}`);
+//   console.log("productid", productId);
+// };
+
   return (
-    <Link to={"/shopping-view/product-details"} className="flex lg:grid lg:grid-cols-4 gap-6 px-3 overflow-x-auto scroll-smooth no-scrollbar" >
+    <div  className="flex lg:grid lg:grid-cols-4 gap-6 px-3 overflow-x-auto scroll-smooth no-scrollbar" >
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <div onClick={() =>navigate("product-details")}>
+        <ProductCard  key={product.id} product={product} />
+        </div>
       ))}
-    </Link>
+    </div>
   );
 };
 

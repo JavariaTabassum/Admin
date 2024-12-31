@@ -8,6 +8,8 @@ import ProfileSetup from "./pages/shopping-view/LoginSigup/ProfileSetup";
 import Home from "./pages/shopping-view/HomePage/Home";
 import ProductDetails from './pages/shopping-view/ProductDetails';
 import AboutUs from "./pages/shopping-view/AboutUs";
+import Cart from "./pages/shopping-view/Cart";
+import Contact from "./pages/shopping-view/Contact";
 
 function App() {
   return (
@@ -25,8 +27,8 @@ function App() {
        <Route path="" element={<Home/>}/>
        <Route path="product-details" element={<ProductDetails />} />
        <Route path="about-us" element={<AboutUs />} />
-        
-        
+       <Route path="cart" element={<Cart/>} />
+       <Route path="contact" element={<Contact/>} />
       </Route>
     </Routes>
   );
