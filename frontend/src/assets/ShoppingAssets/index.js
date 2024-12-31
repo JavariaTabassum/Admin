@@ -30,10 +30,13 @@ import phone from './ContactAssets/phone.svg';
 import email from './ContactAssets/email.svg';
 import location from './ContactAssets/location.svg';
 
+// Cart images
+import deleteIcon from './CartAssets/deleteIcon.png';
+
 export {fbIcon, google,profileImage};
 
 export {productImage,halfRate,fullRate,Increase,decrease,filter,online,more};
 
 export {phone,email,location};
 
-export {shopIcon,collectionImage,customImage1,customImage2,image,filterIcon};
+export {shopIcon,collectionImage,customImage1,customImage2,image,filterIcon,deleteIcon};

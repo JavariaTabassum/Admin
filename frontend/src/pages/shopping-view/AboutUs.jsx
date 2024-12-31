@@ -92,10 +92,10 @@ function AboutUs() {
     <SeeCollection/>
     {/* newsletter section */}
     <div className='lg:px-14 md:px-12 px-6'>
-      <h2 className='capitalize text-center font-Roboto text-[44px] font-medium py-4'>or Subscribe to the newsletter</h2>
+      <h2 className='capitalize text-center font-Roboto md:text-[44px] text-3xl font-medium py-4'>or Subscribe to the newsletter</h2>
       {/* Top section */}
-      <div className='flex justify-between items-center px-16 py-2'>
-      <div className="text-sm font-semibold flex gap-8">
+      <div className='flex md:justify-between justify-center items-center px-16 py-2'>
+      <div className="whitespace-nowrap text-sm font-semibold flex gap-8">
       {categories.map((category, index) => (
         <h3
           key={index}
@@ -108,7 +108,7 @@ function AboutUs() {
         </h3>
       ))}
     </div>
-        <div className='flex justify-center items-center font-normal py-2 bg-[#1E2832] gap-2 text-sm px-4  text-[#ffffff]'><img src={filterIcon} alt="Filter Icon" />Filter</div>
+        <div className='md:flex hidden justify-center items-center font-normal py-2 bg-[#1E2832] gap-2 text-sm px-4  text-[#ffffff]'><img src={filterIcon} alt="Filter Icon" />Filter</div>
       </div>
       <ProductList products={products} />
     </div>
