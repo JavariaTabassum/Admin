@@ -36,7 +36,7 @@ function CartCard({ product }) {
           </div>
     
       </div>
-      <hr />
+      
     </div>
   );
 }
