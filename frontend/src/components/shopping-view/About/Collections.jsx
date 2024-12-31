@@ -32,9 +32,9 @@ function Collections() {
 {/* Main collection */}
         <div className='lg:w-1/2 w-full text-[#000000] md:py-4 py-2'>
             <h2 className='lg:text-[55px] text-[45px] font-Roboto font-light'>Collections</h2>
-            <p className='lg:text-[22px] text-lg font-normal capitalize md:py-2'>you can explore any shop many different collection
+            <p className='lg:text-[22px] text-lg font-Roboto font-normal capitalize md:py-2'>you can explore any shop many different collection
             from various brands here.</p>
-            <button className='flex justify-center items-center md:mt-12 mt-4 text-[21px] font-normal gap-2 bg-[#1E2832] text-[#ffffff] py-3 px-4'><img src={shopIcon} alt="Shop Icon" />Shop Now </button>
+            <button className='flex justify-center font-Roboto  items-center md:mt-12 mt-4 text-[21px] font-normal gap-2 bg-[#1E2832] text-[#ffffff] py-3 px-4'><img src={shopIcon} alt="Shop Icon" />Shop Now </button>
         </div>
         <div className=' relative self-center h-full'><img  className="self-center  z-20 relative rounded-tl-[9rem] rounded-br-[9rem]" src={collectionImage} alt="Collection" /><div className='w-full h-full z-0  absolute  top-5  left-3 border-[1.5px] rounded-tl-[9rem] rounded-br-[9rem] border-[#00000040]'></div></div>
       

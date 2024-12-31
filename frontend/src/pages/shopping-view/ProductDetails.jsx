@@ -10,8 +10,11 @@ import {
 } from "../../assets/ShoppingAssets";
 import ProductInfo from "../../components/shopping-view/ProductInfo";
 import ProductReviews from "../../components/shopping-view/ProductReviews";
+import { Link } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 function ProductDetails() {
+  // const { id } = useParams();
 
   const products = [
           {
@@ -56,12 +59,17 @@ function ProductDetails() {
   const handleSizeSelected = (size) => {
     setSelectedSize(size); // Update the selected size when clicked
   };
+  // const product = products.find((item) => item.id === parseInt(id));
+
+  // if (!product) {
+  //   return <div>Product not found</div>;
+  // }
   return (
     <>
       {/* Main Product details page */}
-      <div className="md:px-14 px-4  md:py-2 py-4">
+      <div className="font-satoshi md:px-14 px-4  md:py-2 py-4">
         {/* Header of product detail */}
-        <div className="flex gap-1 font-base text-[#00000099] font-normal py-4">
+        <div className="flex gap-1 font-base text-[#00000099] font-normal py-4 font-satoshi">
           <span>Home</span>&gt;<span>Shop</span>&gt;<span>Men</span>&gt;
           <span className="text-[#000000]">Tshirt</span>
         </div>
@@ -94,16 +102,16 @@ function ProductDetails() {
             </div>
             <div className="lg:w-3/4  w-full h-full">
               <img
-                src={productImage}
+              src={productImage}
+              alt="Product"
                 className="w-full object-fill h-full"
-                alt="Product"
               />
             </div>
           </div>
           {/* Description Section */}
           <div className="flex flex-col gap-4 md:p-0 lg:w-1/2 w-full">
             {/* Product Name */}
-            <h2 className="text-[#000000] md:text-[40px] text-[30px] font-extrabold">
+            <h2 className="text-[#000000] md:text-[40px] text-[30px] font-extrabold font-Abhaya ">
               Deluxe Mix & Match 029
             </h2>
             {/* Ratings */}
@@ -113,24 +121,24 @@ function ProductDetails() {
               <img src={fullRate} alt="1 Rating" />
               <img src={fullRate} alt="1 Rating" />
               <img src={halfRate} alt="Half Rating" />
-              <h4 className="text-[#000000] font-normal text-base">
+              <h4 className="text-[#000000] font-normal text-base font-satoshi">
                 4.5/<span className="text-[#00000099]">5</span>
               </h4>
             </div>
             {/* Product Price */}
-            <h3 className="text-2xl font-bold flex gap-4 items-center">
+            <h3 className="font-satoshi text-2xl font-bold flex gap-4 items-center">
               Rs.1,440.00{" "}
-              <span className="text-[#0000004D] line-through">Rs.300</span>
-              <span className="text-base font-medium text-[#FF3333]">-40%</span>
+              <span className="font-satoshi text-[#0000004D] line-through">Rs.300</span>
+              <span className="font-satoshi text-base font-medium text-[#FF3333]">-40%</span>
             </h3>
-            <p className="text-[#00000099] font-normal text-base">
+            <p className="font-satoshi text-[#00000099] font-normal text-base">
               Introducing Mix and Match 029: Pack of 3 high-waisted pure cotton
               briefs, designed to elevate your comfort and style. Crafted from
               the finest quality, soft stretchable cotton fabric, these briefs
               promise the perfect fit every time.
             </p>
             {/* Select Colors */}
-            <label className="text-[#00000099] font-normal text-base">
+            <label className="font-satoshi text-[#00000099] font-normal text-base">
               Select colors
             </label>
             <div className="flex gap-4 items-center">
@@ -139,10 +147,10 @@ function ProductDetails() {
               <div className="w-[37px] bg-[#9999CB] h-[37px] rounded-full"></div>
             </div>
             {/* Choose Size */}
-            <label className="text-[#00000099] font-normal text-base">
+            <label className="font-satoshi text-[#00000099] font-normal text-base">
               Choose Size
             </label>
-            <div className="flex md:gap-4 gap-2 md:items-center justify-between w-full">
+            <div className="font-satoshi flex md:gap-4 gap-2 md:items-center justify-between w-full">
               <h3
                 className={`capitalize text-[#00000099] rounded-full font-normal md:text-base text-sm  px-3 md:px-6 py-3 ${
                   selectedSize === "small" ? "bg-[#000000] text-[#ffffff]" : ""
@@ -183,15 +191,15 @@ function ProductDetails() {
               <div>
                 <img src={decrease} alt="Decrease Icon" />
               </div>
-              <span className="text-[#000000] font-normal text-base">1</span>
+              <span className="text-[#000000] font-normal text-base font-satoshi">1</span>
               <div>
                 
                 <img src={Increase} alt="Increase Icon" />
               </div>
               </div>
-              <div className="bg-[#000000] gap-3 font-medium text-[#ffffff]  w-[65%]   md:px-[50px] py-4 flex items-center justify-center rounded-full">
+              <Link to={"/shopping-view/cart"} className="bg-[#000000] gap-3 font-medium text-[#ffffff]  w-[65%]   md:px-[50px] py-4 flex items-center justify-center rounded-full">
                 Add to Cart
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -202,7 +210,7 @@ function ProductDetails() {
         </div>
         {isSelected==="ProductDetails"?<ProductInfo/>:<ProductReviews/>}
         {/* You might also Like */}
-        <h2 className="text-center uppercase font-bold text-[#000] md:text-5xl text-[32px] px-[53px] py-4">you might also like</h2>
+        <h2 className="text-center uppercase font-bold text-[#000] md:text-5xl text-[32px] px-[53px] py-4 font-integral">you might also like</h2>
         <ProductList products={products} />
       </div>
 

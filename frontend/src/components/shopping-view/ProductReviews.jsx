@@ -4,7 +4,7 @@ import ReviewTile from "./ReviewTile";
 
 function ProductReviews() {
   return (
-    <section className="flex flex-col">
+    <section className="font-satoshi flex flex-col">
       <div className="flex justify-between items-center py-6">
         <div className="text-[#000] md:text-2xl text-xl font-bold">
           All Reviews<span className="text-[#00000099] font-normal md:text-base text-sm">(451)</span>

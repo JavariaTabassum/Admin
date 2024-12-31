@@ -2,7 +2,7 @@ import React from 'react'
 import { online,more } from '../../assets/ShoppingAssets';
 function ReviewTile(props) {
   return (
-    <div className='border-[#D6DCE5] border rounded-[20px] px-6 py-7'>
+    <div className='font-satoshi border-[#D6DCE5] border rounded-[20px] px-6 py-7'>
         <div className='flex justify-between items-center py-4'>
       <div className='flex gap-1'>
         <img src={props.image} alt="Rating" />

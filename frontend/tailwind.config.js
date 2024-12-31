@@ -14,6 +14,8 @@ module.exports = {
       fontFamily: {
         'Roboto': ['"Roboto"', 'serif'],
         'Poppins':['"Poppins"','serif'],
+        'Abhaya': ['"Abhaya Libre"', 'serif'],
+        'Albert':['"Albert Sans"', 'serif'],
       },
     },
   },

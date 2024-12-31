@@ -3,7 +3,7 @@ import { phone,location,email } from '../../assets/ShoppingAssets';
 
 function ContactInfo() {
   return (
-    <div className='relative overflow-hidden  lg:w-1/2 w-full flex font-[Poppins] flex-col md:gap-4 gap-3 justify-center items-center bg-[#181818] text-[#ffffff] py-8 md:px-14 px-8'>
+    <div className='relative overflow-hidden  lg:w-1/2 w-full flex font-Poppins flex-col md:gap-4 gap-3 justify-center items-center bg-[#181818] text-[#ffffff] py-8 md:px-14 px-8'>
       <h2 className='font-semibold md:text-[32px] text-xl text-center'>Contact Information</h2>
       <p className='text-[#C9C9C9] md:text-lg text-xs text-center'>Say something to start a live chat.</p>
       <div><img src={phone} alt="Phone call" /></div>
