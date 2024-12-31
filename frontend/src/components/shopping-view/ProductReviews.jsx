@@ -17,7 +17,7 @@ function ProductReviews() {
                  <option value="latest"  className="px-6 w-[120px] flex justify-center mx-2 py-4 rounded-full bg-[#F0F0F0]  text-base font-medium">Latest</option>
                  </select>
             </div>
-            <div className="bg-[#000] text-[#fff] md:px-5 md:py-4 px-4 py-3 rounded-full text-base font-medium">Write a review</div>
+            <div className="bg-[#000] text-[#fff] md:px-5 md:py-4 px-4 py-3 rounded-full whitespace-nowrap text-base font-medium">Write a review</div>
 
         </div>
       </div>

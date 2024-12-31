@@ -55,7 +55,7 @@ const Navbar = () => {
               className="ml-2 bg-transparent text-black outline-none text-sm"
             />
           </div>
-          <Link to="/create-account" className="bg-primary text-base text-white px-4 py-2 rounded-md font-['Plus Jakarta Sans']">Sign Up</Link>
+          <Link to="/create-account" className="bg-primary text-base whitespace-nowrap text-white px-4 py-2 rounded-md font-['Plus Jakarta Sans']">Sign Up</Link>
           <Link
             to="/cart"
             className="bg-primary text-white rounded-full p-2 flex items-center justify-center"
@@ -85,7 +85,7 @@ const Navbar = () => {
             <li><Link to="/categories" className="hover:text-primary" onClick={handleCloseMenu}>Categories</Link></li>
             <li><Link to="/on-sale" className="hover:text-primary" onClick={handleCloseMenu}>On Sale</Link></li>
             <li><Link to="/new-arrivals" className="hover:text-primary" onClick={handleCloseMenu}>New Arrivals</Link></li>
-            <li><Link to="/about-us" className="hover:text-primary" onClick={handleCloseMenu}>About Us</Link></li>
+            <li><Link to="/shopping-view/about-us" className="hover:text-primary" onClick={handleCloseMenu}>About Us</Link></li>
           </ul>
         </div>
       )}

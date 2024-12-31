@@ -5,7 +5,7 @@ function ProfileSetup() {
   return (
     <div className="flex justify-center items-center py-6 font-Roboto ">
       <div className="md:p-8 p-1 md:border md:border-[#E3E3E3]">
-      <div className="w-[350px] md:w-[662px] space-y-4 flex flex-col">
+      <div className="w-[345px] md:w-[662px] space-y-4 flex flex-col px-4">
         <div className="text-center">
           <h1 className="text-2xl font-normal text-foreground">Profile Setup !</h1>
           <p className="text-[#767676] text-base font-normal">
