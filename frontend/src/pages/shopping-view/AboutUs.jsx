@@ -8,7 +8,7 @@ function AboutUs() {
   return (
     <>
     <Collections/>
-    <div className='flex lg:flex-row flex-col gap-8 lg:px-14 flex-row py-6 justify-center items-stretch'>
+    <div className='flex lg:flex-row flex-col gap-8 lg:px-8 py-6 justify-center items-stretch'>
     <Customizable image={customImage1}/>
     </div>
     <div className='flex  lg:flex-row-reverse flex-col gap-8 lg:px-14 py-6 justify-center items-stretch'>
