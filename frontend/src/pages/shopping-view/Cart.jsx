@@ -40,7 +40,7 @@ function Cart() {
             },
           ];
   return (
-    <div className='lg:px-[5rem] px-6'>
+    <div className='lg:px-[5rem] px-6 py-4'>
       {/* Header of Cart */}
       <div className="flex gap-1 font-base text-[#00000099] font-normal py-4 font-satoshi">
           <span>Home</span>&gt;
@@ -51,7 +51,11 @@ function Cart() {
           {/* Cart items */}
           <div className='flex  border rounded-[20px] border-[#0000001A] flex-col lg:w-[60%] w-full lg:px-4 px-2'>
             {products.map(product=>{
-              return( <CartCard key={product.id} product={product}/>)
+              return(
+                <>
+                 <CartCard key={product.id} product={product}/>
+                 <hr  className='border-[#0000001A] h-[1px]'/>
+                 </>)
             })}
 
           </div>
