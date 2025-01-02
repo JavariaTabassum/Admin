@@ -62,7 +62,7 @@ const Profile = () => {
               onClick={handleEditClick} />
           </div>
         </div>
-        <div>
+        <div className='me-5'>
           <Profileform />
         </div>
       </div>

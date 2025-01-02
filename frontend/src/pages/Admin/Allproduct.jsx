@@ -43,7 +43,7 @@ const Allproduct = () => {
 
         <div className="flex flex-col flex-1 overflow-x-hidden">
           <h2 className="mt-10 text-3xl font-ibm-plex" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>All Products</h2>
-          <div className="mt-8 mb-10 me-10">
+          <div className="mt-8 mb-10 me-5">
             <Selling />
           </div>
         </div>

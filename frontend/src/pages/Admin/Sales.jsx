@@ -46,15 +46,15 @@ const Sales = () => {
         <div className="flex flex-col flex-1 overflow-x-hidden">
           <h2 className="mt-10 text-3xl font-inter" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Orders</h2>
 
-          <div className="-mt-11 -ml-5">
+          <div className="-mt-11 -ml-10">
             <SummaryCards />
           </div>
 
-          <div className="me-10">
+          <div className="me-5">
             <Graph />
           </div>
 
-          <div className="mt-8 me-10">
+          <div className="mt-8 me-5">
             <Table />
           </div>
         </div>

@@ -44,6 +44,7 @@ const Chatuser = () => {
               max-height: ${isDropdownVisible ? "300px" : "0"};
               overflow-y: auto;
               transition: max-height 0.3s ease;
+              z-index: -1;
             }
 
             .rotate-180 {

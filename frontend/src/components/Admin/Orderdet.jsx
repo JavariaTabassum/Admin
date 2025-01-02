@@ -73,18 +73,29 @@ const OrderDetails = () => {
         flex-direction: column-reverse;
         }
         }
+        @media (min-width: 800px) {
+       .customer-info {
+        width: 300px;
+       }
+       }
         @media (max-width: 470px){
         .column{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
+        gap: 10px
+        }
+        }
+        @media (min-width: 470px){
+        .text{
+        text-align: right;
         }
         }
         }
         `}
       </style>
       <div className="max-w-6xl mx-auto col grid grid-cols-3 font-poppins gap-6">
-        <div className="col-span-2 bg-white rounded-lg shadow p-6">
-          <h2 className="text-lg font-semibold text-[rgba(23,23,37,1] mb-6">Order Items</h2>
+        <div className="col-span-2  bg-white rounded-lg shadow p-6">
+          <h2 className="text-lg font-semibold text-[rgba(23,23,37,1)] mb-6">Order Items</h2>
           <div className="grid grid-cols-2 gap-4 column">
             {items.map((item, index) => (
               <div
@@ -129,21 +140,20 @@ const OrderDetails = () => {
                 <span className="font-medium">Total Order Value:</span>
                 <span className='[font-weight:550]'>₹{billingDetails.totalValue}</span>
               </div>
-              <div className='flex justify-between mb-8'>
+              <div className='flex justify-between column'>
               <div className="flex flex-col">
                 <span className="font-medium">Courier:</span>
                 <span className=" font-semibold text-[18px] mt-2" style={{ color: 'rgba(23, 23, 37, 1)' }}>{billingDetails.courier}</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-medium text-right">Order Date:</span>
+                <span className="font-medium text">Order Date:</span>
                 <span  className='[font-weight:550] text-[15px] mt-2'style={{ color: 'rgba(23, 23, 37, 1)' }}>{billingDetails.orderDate}</span>
               </div>
-
               </div>
             
               <div>
                 <p>
-                  <span className="font-medium mt-5">Shipping Address:</span>
+                  <span className="font-medium">Shipping Address:</span>
                   <span className="block [font-weight:550] text-[18px] mt-2" style={{ color: 'rgba(23, 23, 37, 1)' }}>
                     {shippingDetails.address}
                   </span>
@@ -152,8 +162,8 @@ const OrderDetails = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-medium mb-6">Customer Information</h2>
+        <div className="bg-white col-span-1 rounded-lg shadow p-6">
+          <h2 className="text-xl  font-medium mb-6">Customer Information</h2>
           <div className="flex flex-col items-center">
             <div className="relative mb-4">
               <img
@@ -162,9 +172,9 @@ const OrderDetails = () => {
                 className="w-30 h-30 p-2 rounded-full border-4 border-red-500"
               />
             </div>
-            <div className="text-center flex flex-col gap-4">
+            <div className="text-center flex flex-col gap-4 w-full">
               <p className="text-lg font-semibold">{customerInfo.name}</p>
-              <p className="text-md text-[rgba(141,152,175,1)]">{customerInfo.email}</p>
+              <p className="text-md break-words text-[rgba(141,152,175,1)]">{customerInfo.email}</p>
               <p className="text-md text-[rgba(141,152,175,1)]">{customerInfo.phone}</p>
             </div>
             

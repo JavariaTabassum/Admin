@@ -51,8 +51,10 @@ const Shipping = () => {
                             + Add New
                         </button>
                     </div>
-
+                    <div className="mt-8 mb-10 -me-3">
                     <CourierList />
+                    </div>
+                    
                 </div>
 
             </div>
