@@ -1,6 +1,5 @@
 import './App.css';
 import { Routes,Route } from 'react-router-dom';
-import Home from './pages/Home';
 import Login from './pages/Admin/Login'
 import Dashboard from './pages/Admin/Dashboard';
 import Sales from './pages/Admin/Sales';
@@ -12,12 +11,12 @@ import Shipping from './pages/Admin/Shipping';
 import Profile from './pages/Admin/Profile';
 import Profiled from './pages/Admin/Profiled';
 import Message from './pages/Admin/Message';
-
+import OrderDetail from './pages/Admin/Orderdetail';
+import CourierDetail from './pages/Admin/Courierdetail';
 
 function App() {
   return (
     <Routes>
-    <Route path="/home" element={<Home />} />
     <Route path="/" element={<Login />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/sales" element={<Sales />} />
@@ -25,10 +24,13 @@ function App() {
     <Route path='/editproduct' element={<EditProducts />} />
     <Route path='/status' element={<Status />} />
     <Route path='/order' element={<Order />} />
+    <Route path="/order/:id" element={<OrderDetail />} />
+    <Route path="/courier/:code" element={<CourierDetail />} />
     <Route path='/shipping' element={<Shipping />} />
     <Route path='/profile' element={<Profile />} />
     <Route path="/profiled" element={<Profiled />} />
     <Route path="/message" element={<Message />} />
+
   </Routes>
   );
 }

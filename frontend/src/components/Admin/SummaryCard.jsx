@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// Mock data for calculations (20 orders)
 const mockOrders = [
   { id: 1, userId: 101, price: 300 },
   { id: 2, userId: 102, price: 450 },
@@ -24,11 +23,10 @@ const mockOrders = [
   { id: 20, userId: 119, price: 150 },
 ];
 
-// Previous month's data for comparison
 const previousData = {
-  revenue: 8000, // Previous month's total revenue
-  orders: 22,    // Previous month's total orders
-  users: 18,     // Previous month's unique users (K)
+  revenue: 8000, 
+  orders: 22,  
+  users: 18,     
 };
 
 const SummaryCards = () => {
@@ -42,23 +40,23 @@ const SummaryCards = () => {
   });
 
   useEffect(() => {
-    // Perform calculations here when component mounts
+
     const calculateSummary = () => {
-      // Calculate total revenue
+
       const totalRevenue = mockOrders.reduce((acc, order) => acc + order.price, 0);
 
-      // Calculate number of orders
+          
       const totalOrders = mockOrders.length;
 
-      // Calculate unique users
+
       const uniqueUsers = new Set(mockOrders.map((order) => order.userId)).size;
 
-      // Calculate percentage change for revenue, orders, and users
+
       const revenueChange = ((totalRevenue - previousData.revenue) / previousData.revenue) * 100;
       const ordersChange = ((totalOrders - previousData.orders) / previousData.orders) * 100;
       const usersChange = ((uniqueUsers - previousData.users) / previousData.users) * 100;
 
-      // Update the summary state
+
       setSummaryData({
         revenue: totalRevenue,
         orders: totalOrders,
@@ -70,7 +68,7 @@ const SummaryCards = () => {
     };
 
     calculateSummary();
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []); 
 
   const data = [
     {
@@ -119,15 +117,15 @@ const SummaryCards = () => {
 
       {data.map((item, index) => {
         let lineColor;
-        let wavePath = "M2 12c3-6 9-6 15 0 6 6 12 6 18 0"; // Default upward wave
+        let wavePath = "M2 12c3-6 9-6 15 0 6 6 12 6 18 0"; 
 
         if (item.title === "Revenue") {
-          lineColor = "#F59E0B"; // Orange for Revenue
+          lineColor = "#F59E0B"; 
         } else if (item.title === "Orders") {
-          lineColor = "#EF4444"; // Red for Orders
-          wavePath = "M2 12c3 6 9 6 15 0 6-6 12-6 18 0"; // Downward wave for Orders
+          lineColor = "#EF4444"; 
+          wavePath = "M2 12c3 6 9 6 15 0 6-6 12-6 18 0"; 
         } else if (item.title === "Users") {
-          lineColor = "#10B981"; // Green for Users
+          lineColor = "#10B981"; 
         }
 
         return (
@@ -135,13 +133,11 @@ const SummaryCards = () => {
             key={index}
             className="summary-card bg-white rounded-lg shadow-md p-6 flex items-center w-[300px]"
           >
-            {/* Row 1: Title and Value */}
             <div className="flex flex-col items-center w-full">
-              <h3 className="text-gray-500 text-sm font-medium">{item.title}</h3>
-              <p className="text-2xl font-bold text-gray-800">{item.value}</p>
+              <h3 className="font-inter text-md text-[rgba(142,149,169,1)] mb-2 font-medium">{item.title}</h3>
+              <p className="text-2xl font-semibold font-inter text-[rgba(28,42,83,1)]">{item.value}</p>
             </div>
 
-            {/* Row 2: Percentage and Trend Line */}
             <div className="flex flex-col items-center w-full">
               <div
                 className="text-sm font-medium flex items-center"

@@ -5,7 +5,7 @@ import Chat from '../../components/Admin/Chat';
 import { FaBars } from 'react-icons/fa';
 
 const Message = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false); // State to control sidebar visibility
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false); 
 
   const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
 
@@ -27,17 +27,21 @@ const Message = () => {
             margin-left: 300px;
             }
           }
+            @media (max-width: 800px){
+            .user{
+             position: absolute;
+             top: 10px;
+             right: 10px;
+            }
+            }
         `}
       </style>
 
       <div className=' fixed h-[full]'>
       <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
-     
 
-      {/* Main Content */}
       <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin">
-        {/* Menu Icon (Visible below 1050px) */}
         <button
           className="menu-icon mt-7 text-2xl text-gray-700"
           onClick={toggleSidebar}
@@ -45,15 +49,13 @@ const Message = () => {
           <FaBars />
         </button>
 
-        {/* Dashboard Content */}
         <div className="flex flex-col flex-1 overflow-x-hidden">
-          <h2 className="mt-10 text-3xl font-bold font-inter">Message</h2>
+          <h2 className="mt-10 text-3xl font-ibm-plex" style={{ color: "rgba(23,23,37,1)", fontWeight: "500" }}>Message</h2>
         </div>
 
-        {/* Chat Section */}
         <div className="flex flex-1 gap-6 mt-5 mb-8">
           {/* ChatUser Component */}
-          <div className="  users b rounded-lg  h-full">
+          <div className="rounded-lg user h-full">
             <ChatUser />
           </div>
 

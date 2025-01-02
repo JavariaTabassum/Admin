@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { FaBars, FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
+import Pencil from '../../images/ppencil.png';
+import Trash from '../../images/pdustbin.png';
 import Sidebar from '../../components/Admin/Sidebar';
 import Profileform from '../../components/Admin/Profileform';
 
@@ -17,7 +19,7 @@ const Profile = () => {
 
   return (
     <div className="flex w-full min-h-screen bg-slate-100">
- <style>
+      <style>
         {`
           .menu-icon {
             display: none; 
@@ -37,13 +39,11 @@ const Profile = () => {
       </style>
 
       <div className=' fixed h-[full]'>
-      <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+        <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
-     
 
-      {/* Main Content */}
       <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin">
-        {/* Menu Icon (Visible below 1050px) */}
+
         <button
           className="menu-icon mt-7 text-2xl text-gray-700"
           onClick={toggleSidebar}
@@ -53,15 +53,13 @@ const Profile = () => {
 
         {/* Dashboard Content */}
         <div className="flex items-center me-8 mt-10 justify-between">
-          <h2 className="text-3xl font-bold font-inter">Profile</h2>
+          <h2 className="text-3xl font-ibm-plex" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Profile</h2>
           <div className="ml-4 flex items-center space-x-8">
-            {/* Pencil Icon to Edit Profile */}
-            <FaPencilAlt
-              className="text-gray-600 border hover:text-gray-800 cursor-pointer"
-              onClick={handleEditClick} // Trigger navigation on click
-            />
+            <img src={Pencil} alt="" className="text-gray-600  w-6 h-6 hover:text-gray-700 cursor-pointer"
+              onClick={handleEditClick} />
 
-            <FaTrashAlt className="text-red-500 hover:text-red-700 cursor-pointer" />
+            <img src={Trash} alt="" className="text-red-500  w-5 h-6  hover:text-red-600 cursor-pointer"
+              onClick={handleEditClick} />
           </div>
         </div>
         <div>

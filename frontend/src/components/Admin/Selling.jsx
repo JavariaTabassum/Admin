@@ -5,7 +5,6 @@ const Selling = () => {
   const productsPerPage = 7;
   const [products, setProducts] = useState([]);
 
-  // Simulating backend data fetching (Replace this with actual fetch logic)
   useEffect(() => {
     const fetchProducts = async () => {
       const fetchedProducts = [
@@ -80,7 +79,6 @@ const Selling = () => {
     fetchProducts();
   }, []);
 
-  // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -103,23 +101,22 @@ const Selling = () => {
     setCurrentPage(page);
   };
 
-  // Function to determine dark background color dynamically for each category
   const getBackgroundColor = (category) => {
     switch (category) {
       case 'Undergarments':
-        return 'bg-yellow-600'; // Dark yellow
+        return 'bg-yellow-600'; 
       case 'Cosmetics':
-        return 'bg-pink-600'; // Dark pink
+        return 'bg-pink-600'; 
       case 'Furniture':
-        return 'bg-green-700'; // Dark green
+        return 'bg-green-700'; 
       case 'Electronics':
-        return 'bg-blue-700'; // Dark blue
+        return 'bg-blue-700'; 
       case 'Accessories':
-        return 'bg-purple-700'; // Dark purple
+        return 'bg-purple-700'; 
       case 'Fragrances':
-        return 'bg-red-700'; // Dark red
+        return 'bg-red-700';
       default:
-        return 'bg-gray-600'; // Default dark gray
+        return 'bg-gray-600'; 
     }
   };
 
@@ -131,8 +128,8 @@ const Selling = () => {
     <div className="p-8 bg-white rounded-lg shadow-md">
 <div className="flex flex-col md:flex-row justify-between">
   <div className="flex  flex-col ">
-    <h2 className="text-2xl font-semibold font-ibm-plex">Top Selling Product</h2>
-    <p className="text-gray-600 font-ibm-plex mt-4 w-[550px]">
+    <h2 className="text-2xl text-[rgba(5,15,36,1)] font-medium font-ibm-plex">Top Selling Product</h2>
+    <p className="text-gray-600 font-poppins mt-4 w-4/5">
       All the products that are available on your store are showing with their detail, price, and other info.
     </p>
   </div>
@@ -143,17 +140,13 @@ const Selling = () => {
   </div>
 </div>
 
-
-
-
-      {/* Product Table */}
       <div className="overflow-x-auto rounded-[30px] border border-gray-300 mt-6 md:mt-10 ">
       <table
           className="table-auto w-full text-left border-collapse"
           style={{ tableLayout: "fixed" }}
         >
           <thead>
-            <tr className="w-full text-left text-gray-600 uppercase text-sm border-b-2 border-gray-200">
+            <tr className="w-full text-left text-[rgba(5,15,36,1)] font-ibm-plex uppercase text-sm border-b-2 border-gray-200">
               <th className="py-8 px-4 w-[200px] whitespace-nowrap">Product</th> 
               <th className="py-8 px-4 w-[120px] whitespace-nowrap">ID no</th>
               <th className="py-8 px-4 w-[100px] whitespace-nowrap">Orders</th>
@@ -162,37 +155,35 @@ const Selling = () => {
               <th className="py-8 px-4 w-[150px] whitespace-nowrap">Stock</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='font-poppins'>
             {currentProducts.map((product) => (
-              <tr key={product.id} className="border-b border-gray-200 hover:bg-gray-100 whitespace-nowrap">
-                <td className="py-4 px-4 flex items-center space-x-4">
+              <tr key={product.id} className="border-b border-gray-200 hover:bg-gray-100 whitespace-nowrap ">
+                <td className="py-4 px-4 flex items-center space-x-4 w-[300px]">
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center ${getBackgroundColor(product.category)}`}>
                     <img src={getProductImage(product)} alt={product.name} className="w-8 h-8 rounded-full object-cover" />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold">{product.name}</p>
+                    <p className="text-lg">{product.name}</p>
                     <p className="text-sm text-gray-500">{product.description}</p>
                   </div>
                 </td>
-                <td className="py-4 px-4 ">{product.id}</td>
-                <td className="py-4 px-4">{product.orders}</td>
-                <td className="py-4 px-4">${product.price}</td>
-                <td className="py-4 px-4">{product.category}</td>
-                <td className="py-4 px-4">{product.stock}</td>
+                <td className="py-4 px-4 text-gray-500 ">{product.id}</td>
+                <td className="py-4 px-4 text-gray-500">{product.orders}</td>
+                <td className="py-4 px-4 text-gray-500">${product.price}</td>
+                <td className="py-4 px-4 text-gray-500">{product.category}</td>
+                <td className="py-4 px-4 text-gray-500">{product.stock}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      {/* Pagination Section */}
-      <div className="flex justify-between items-center mt-6">
-        {/* Product Count */}
+      <div className="flex  flex-col md:flex-row gap-y-2 justify-between items-center mt-6">
+
         <p className="text-sm text-gray-500">
           Showing {Math.min(indexOfLastProduct, products.length)} of {products.length} products
         </p>
 
-        {/* Pagination */}
         <div className="flex items-center space-x-4 text-gray-600">
           <button
             onClick={handlePrevPage}
@@ -202,7 +193,6 @@ const Selling = () => {
             Prev
           </button>
 
-          {/* Pagination Numbers */}
           <div className="flex items-center space-x-3">
             {Array.from({ length: totalPages }, (_, index) => (
               <button

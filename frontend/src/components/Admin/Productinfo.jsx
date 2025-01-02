@@ -2,31 +2,32 @@ import React, { useState } from 'react';
 import {
     FaFileAlt,
     FaFileImage,
-    FaWeightHanging,
-    FaDollarSign,
     FaTrashAlt,
     FaEdit,
     FaChevronDown,
 } from 'react-icons/fa';
+import Fb from '../../images/facebook.png';
+import Dollar from '../../images/dollar.png';
+import File from '../../images/file.png';
+import Media from '../../images/media.png';
+import Trash from '../../images/trash.png';
 
 const ProductForm = () => {
     const [productName, setProductName] = useState('');
     const [weight, setWeight] = useState(2);
     const [category, setCategory] = useState('');
     const [color, setColor] = useState(3);
-    const [brand, setBrand] = useState(''); // Add brand state
-    const [cupSize, setCupSize] = useState(''); // Add cupSize state
-    const [size, setSize] = useState(''); // Add size state
+    const [brand, setBrand] = useState(''); 
+    const [cupSize, setCupSize] = useState(''); 
+    const [size, setSize] = useState('');
     const [confirmDelete, setConfirmDelete] = useState(false);
 
     const handleSave = () => {
-        // Handle the save action (e.g., send data to backend)
         console.log('Product saved:', { productName, weight, category, color });
     };
 
     const handleDelete = () => {
         if (confirmDelete) {
-            // Handle product deletion logic
             console.log('Product deleted');
         } else {
             alert('Please confirm deletion.');
@@ -37,7 +38,7 @@ const ProductForm = () => {
         <>
      <style>
                 {`
-                    @media (max-width: 830px) {
+                @media (max-width: 830px) {
                         .side {
                             display: none;
                         }
@@ -69,26 +70,26 @@ const ProductForm = () => {
 
         <div className="flex p-10 rounded-[40px] bg-white">
             {/* Sidebar */}
-            <div className="w-1/4 side bg-white rounded-lg p-4 mr-8 border border-gray-300 h-auto max-h-64 overflow-y-auto">
+            <div className="w-1/4 side bg-white rounded-lg p-4 mr-8 border font-ibm-plex border-gray-300 h-auto max-h-64 overflow-y-auto">
                 <ul className="space-y-4">
-                    <li className="text-pink-500 font-semibold flex items-center space-x-2">
-                        <FaFileAlt /> {/* Product Information icon */}
+                    <li className="text-pink-600 font-semibold flex items-center space-x-2">
+                    <img src={File} alt="" className='w-4 h-4'/>
                         <span>Product Information</span>
                     </li>
-                    <li className="text-gray-600 flex items-center space-x-2">
-                        <FaFileImage /> {/* Media files icon */}
+                    <li className="text-[rgba(5,15,36,1)] flex items-center space-x-2">
+                    <img src={Media} alt="" className='w-4 h-4'/>
                         <span>Media files</span>
                     </li>
-                    <li className="text-gray-600 flex items-center space-x-2">
-                        <FaWeightHanging /> {/* Weight icon */}
+                    <li className="text-[rgba(5,15,36,1)] flex items-center space-x-2">
+                        <img src={Fb} alt="" className='w-4 h-4'/>
                         <span>Weight</span>
                     </li>
-                    <li className="text-gray-600 flex items-center space-x-2">
-                        <FaDollarSign /> {/* Pricing icon */}
+                    <li className="text-[rgba(5,15,36,1)] flex items-center space-x-2">
+                        <img src={Dollar} alt="" className='w-4 h-4' />
                         <span>Pricing</span>
                     </li>
-                    <li className="text-gray-600 flex items-center space-x-2">
-                        <FaTrashAlt /> {/* Delete product icon */}
+                    <li className="text-[rgba(5,15,36,1)] flex items-center space-x-2">
+                    <img src={Trash} alt="" className='w-4 h-4'/>
                         <span>Delete product</span>
                     </li>
                 </ul>
@@ -98,26 +99,26 @@ const ProductForm = () => {
             <div className="w-3/4 space-y-6 wide">
                 {/* Product Description */}
                 <div className="bg-white p-6 rounded-lg border border-gray-300">
-                    <h2 className="text-lg font-semibold flex items-center space-x-2">
+                    <h2 className="text-lg font-semibold font-ibm-plex flex items-center space-x-2">
                         <span>Product Description</span>
                         <button className="text-gray-500 hover:text-pink-500">
                             <FaEdit /> {/* Edit icon */}
                         </button>
                     </h2>
-                    <p className="text-gray-600 mt-2">
+                    <p className="text-gray-600 mt-2 font-poppins">
                         The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to.
                     </p>
                 </div>
 
                 {/* Product Information Form */}
                 <div className="bg-white p-6 rounded-lg border  border-gray-300">
-                    <h2 className="text-lg font-semibold mb-4">Product Information</h2>
+                    <h2 className="text-lg font-semibold mb-4 font-ibm-plex">Product Information</h2>
 
                     {/* Grid Layout for Form Fields */}
                     <div className="grid grid-cols-2 gap-4 col">
                         {/* Name Input */}
                         <div>
-                            <label className="block text-gray-700 mb-5">Name</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Name</label>
                             <input
                                 type="text"
                                 value={productName}
@@ -128,7 +129,7 @@ const ProductForm = () => {
 
                         {/* Weight Input */}
                         <div>
-                            <label className="block text-gray-700 mb-5">Weight</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Weight</label>
                             <input
                                 type="number"
                                 value={weight}
@@ -139,7 +140,7 @@ const ProductForm = () => {
 
                         {/* Category Dropdown */}
                         <div className="relative">
-                            <label className="block text-gray-700 mb-5">Category</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Category</label>
                             <select
                                 value={category}
                                 onChange={(e) => setCategory(e.target.value)}
@@ -157,7 +158,7 @@ const ProductForm = () => {
 
                         {/* Color Dropdown */}
                         <div className="relative">
-                            <label className="block text-gray-700 mb-5">Color</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Color</label>
                             <select
                                 value={color}
                                 onChange={(e) => setColor(e.target.value)}
@@ -176,7 +177,7 @@ const ProductForm = () => {
                     <div className="flex justify-end mt-6 center">
                         <button
                             onClick={handleSave}
-                            className="bg-pink-500 text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
+                            className="bg-[rgba(236,0,140,1)] font-poppins text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
                         >
                             Save
                         </button>
@@ -186,9 +187,9 @@ const ProductForm = () => {
                 {/* Media Files Section (Separate Box) */}
                 <div className="bg-white p-6 rounded-lg border border-gray-300">
                     <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-lg font-semibold">Media Files</h2>
+                        <h2 className="text-lg font-semibold font-ibm-plex">Media Files</h2>
                         {/* Upload More Files Link */}
-                        <p className="text-pink-500 cursor-pointer">Upload more files</p>
+                        <p className="text-[rgba(236,0,140,1)] cursor-pointer">Upload more files</p>
                     </div>
                     <div className="space-y-4">
                         {/* File 1 */}
@@ -200,15 +201,15 @@ const ProductForm = () => {
                                     className="w-12 h-12 rounded-full"
                                 />
                                 <div>
-                                    <p className="text-gray-700">Minimal sofa.PNG</p>
+                                    <p className="text-[rgba(5,15,36,1)] font-poppins text-md">Minimal sofa.PNG</p>
                                     <p className="text-gray-500 text-sm">45 Kb</p>
                                 </div>
                             </div>
                             <div className="flex items-center space-x-4">
-                                <button className="text-gray-500 hover:text-pink-500">
+                                <button className="text-[rgba(236,0,140,1)]">
                                     <FaEdit />
                                 </button>
-                                <button className="text-gray-500 hover:text-pink-500">
+                                <button className="text-[rgba(236,0,140,1)]">
                                     <FaTrashAlt />
                                 </button>
                             </div>
@@ -223,15 +224,15 @@ const ProductForm = () => {
                                     className="w-12 h-12 rounded-full"
                                 />
                                 <div>
-                                    <p className="text-gray-700">Minimal sofa.jpg</p>
+                                    <p className="text-[rgba(5,15,36,1)] text-md font-poppins">Minimal sofa.jpg</p>
                                     <p className="text-gray-500 text-sm">35 Kb</p>
                                 </div>
                             </div>
                             <div className="flex items-center space-x-4">
-                                <button className="text-gray-500 hover:text-pink-500">
+                                <button className="text-pink-500">
                                     <FaEdit />
                                 </button>
-                                <button className="text-gray-500 hover:text-pink-500">
+                                <button className="text-pink-500">
                                     <FaTrashAlt />
                                 </button>
                             </div>
@@ -240,7 +241,7 @@ const ProductForm = () => {
                     <div className="flex justify-end mt-6 center">
                         <button
                             onClick={handleSave}
-                            className="bg-pink-500 text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
+                            className="bg-[rgba(236,0,140,1)] font-poppins text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
                         >
                             Save
                         </button>
@@ -248,13 +249,13 @@ const ProductForm = () => {
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-gray-300">
-                    <h2 className="text-lg font-semibold mb-4">Weight</h2>
+                    <h2 className="text-lg font-semibold mb-4 font-ibm-plex">Weight</h2>
 
                     {/* Grid Layout for Form Fields */}
                     <div className="grid grid-cols-2 gap-4 col">
                         {/* Name Input */}
                         <div className='relative'>
-                            <label className="block text-gray-700 mb-5">Brand SIze </label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Brand SIze </label>
                             <select
                                 value={brand}
                                 onChange={(e) => setBrand(e.target.value)}
@@ -272,7 +273,7 @@ const ProductForm = () => {
 
                         {/* Weight Input */}
                         <div className='relative'>
-                            <label className="block text-gray-700 mb-5">Cup size</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Cup size</label>
                             <select
                                 value={cupSize}
                                 onChange={(e) => setCupSize(e.target.value)}
@@ -290,7 +291,7 @@ const ProductForm = () => {
 
                         {/* Category Dropdown */}
                         <div className="relative">
-                            <label className="block text-gray-700 mb-5">Size</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Size</label>
                             <select
                                 value={size}
                                 onChange={(e) => setSize(e.target.value)}
@@ -308,7 +309,7 @@ const ProductForm = () => {
 
                         {/* Color Dropdown */}
                         <div className="relative">
-                            <label className="block text-gray-700 mb-5">Color</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Color</label>
                             <select
                                 value={color}
                                 onChange={(e) => setColor(e.target.value)}
@@ -327,7 +328,7 @@ const ProductForm = () => {
                     <div className="flex justify-end mt-6 center">
                         <button
                             onClick={handleSave}
-                            className="bg-pink-500 text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
+                            className="bg-[rgba(236,0,140,1)] font-poppins text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
                         >
                             Save
                         </button>
@@ -335,13 +336,13 @@ const ProductForm = () => {
                 </div>
 
                 <div className="bg-white p-6 rounded-lg border border-gray-300">
-                    <h2 className="text-lg font-semibold mb-4">Pricing</h2>
+                    <h2 className="text-lg font-semibold mb-4 font-ibm-plex">Pricing</h2>
 
                     {/* Grid Layout for Form Fields */}
                     <div className="grid grid-cols-2 gap-4 col">
                         {/* Name Input */}
                         <div>
-                            <label className="block text-gray-700 mb-5">Price</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Price</label>
                             <input
                                 type="text"
                                 value={productName}
@@ -352,7 +353,7 @@ const ProductForm = () => {
 
                         {/* Weight Input */}
                         <div className='relative'>
-                            <label className="block text-gray-700 mb-5">Delivery Charges</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Delivery Charges</label>
                             <select
                                 value={cupSize}
                                 onChange={(e) => setCupSize(e.target.value)}
@@ -370,7 +371,7 @@ const ProductForm = () => {
 
                         {/* Category Dropdown */}
                         <div>
-                            <label className="block text-gray-700 mb-5">Available Discount</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Available Discount</label>
                             <input
                                 type="text"
                                 value={productName}
@@ -381,7 +382,7 @@ const ProductForm = () => {
 
                         {/* Color Dropdown */}
                         <div className="relative">
-                            <label className="block text-gray-700 mb-5">Taxr</label>
+                            <label className="block text-gray-700 mb-5 font-poppins">Taxr</label>
                             <select
                                 value={color}
                                 onChange={(e) => setColor(e.target.value)}
@@ -400,7 +401,7 @@ const ProductForm = () => {
                     <div className="flex justify-end mt-6 center">
                         <button
                             onClick={handleSave}
-                            className="bg-pink-500 text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
+                            className="bg-[rgba(236,0,140,1)] font-poppins text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
                         >
                             Save
                         </button>
@@ -408,8 +409,8 @@ const ProductForm = () => {
                 </div>
                 {/* Delete Product Section */}
                 <div className="bg-white p-6 rounded-lg border border-gray-300">
-                    <h2 className="text-lg font-semibold mb-4">Delete Product</h2>
-                    <p className="text-gray-600">
+                    <h2 className="text-lg font-semibold mb-4 font-ibm-plex">Delete Product</h2>
+                    <p className="text-gray-600 font-poppins">
                         When you delete your product, you lose access to their previous records, and we permanently delete your product data. You can cancel the deletion for 14 days.
                     </p>
                     <div className="flex items-center mt-4">
@@ -419,18 +420,18 @@ const ProductForm = () => {
                             onChange={() => setConfirmDelete(!confirmDelete)}
                             className="mr-2"
                         />
-                        <label className="text-gray-600">Confirm that I want to delete my product</label>
+                        <label className="text-gray-600 font-poppins">Confirm that I want to delete my product</label>
                     </div>
                     <div className="flex justify-end mt-6 gap-5 column">
                     <button
                             onClick={handleDelete}
-                            className=" text-pink-600 border border-pink-600 w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
+                            className=" text-pink-600 border font-poppins border-pink-600 w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
                         >
                             Learn more
                         </button>
                         <button
                             onClick={handleDelete}
-                            className="bg-pink-500 text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
+                            className="bg-[rgba(236,0,140,1)] font-poppins text-white w-[150px] px-6 py-2 rounded-[50px] shadow-md hover:bg-pink-600"
                         >
                             Delete
                         </button>

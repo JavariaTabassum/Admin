@@ -5,7 +5,7 @@ import Tablestatus from '../../components/Admin/Tablestatus';
 import { FaBars } from 'react-icons/fa';
 
 const Status = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false); // State to control sidebar visibility
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false); 
 
   const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
 
@@ -33,11 +33,8 @@ const Status = () => {
       <div className=' fixed h-[full]'>
       <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
-     
-
-      {/* Main Content */}
-      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin"> {/* Added margin-left here */}
-        {/* Menu Icon (Visible below 1050px) */}
+    
+      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin"> 
           <button
             className="menu-icon mt-7 text-2xl text-gray-700"
             onClick={toggleSidebar}
@@ -45,10 +42,8 @@ const Status = () => {
             <FaBars />
           </button>
 
-
-        {/* Dashboard Content */}
         <div className="flex flex-col flex-1 overflow-x-hidden">
-          <h2 className="mt-10 text-3xl font-bold font-inter">Approvals</h2>
+          <h2 className="mt-10 text-3xl font-ibm-plex" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Approvals</h2>
         </div>
 
         <div>

@@ -32,8 +32,8 @@ const LatestOrders = () => {
 
   return (
     <div className="p-6 bg-white shadow rounded-lg font-inter mb-7">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">Latest Orders</h2>
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-[rgba(28,42,83,1)] font-inter" style={{fontWeight: "600", fontSize: "20px"}} >Latest Orders</h2>
         <a href="#" className="text-md font-semibold text-gray-800 hover:underline">
           More &rarr;
         </a>
@@ -70,13 +70,13 @@ const LatestOrders = () => {
                 </td>
                 <td className="p-3">
                   <div className="flex items-center space-x-2">
-                    <button className="text-gray-500 hover:text-gray-700">
+                    <button className=" text-[rgba(200,202,216,1)] hover:text-gray-400">
                       <FaPen />
                     </button>
-                    <button className="text-gray-500 hover:text-gray-700">
+                    <button className=" text-[rgba(200,202,216,1)] hover:text-gray-400">
                       <FaTrashAlt />
                     </button>
-                    <button className="text-gray-500 hover:text-gray-700">
+                    <button className=" text-[rgba(200,202,216,1)] hover:text-gray-400">
                       <FaEllipsisH />
                     </button>
                   </div>

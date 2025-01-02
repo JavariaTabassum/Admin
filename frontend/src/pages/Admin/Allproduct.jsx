@@ -4,7 +4,7 @@ import Selling from '../../components/Admin/Selling'
 import { FaBars } from 'react-icons/fa';
 
 const Allproduct = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false); // State to control sidebar visibility
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
 
@@ -32,11 +32,8 @@ const Allproduct = () => {
       <div className=' fixed h-[full]'>
       <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
-     
 
-      {/* Main Content */}
-      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin"> {/* Added margin-left here */}
-        {/* Menu Icon (Visible below 1050px) */}
+      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin"> 
           <button
             className="menu-icon mt-7 text-2xl text-gray-700"
             onClick={toggleSidebar}
@@ -44,11 +41,8 @@ const Allproduct = () => {
             <FaBars />
           </button>
 
-        {/* Dashboard Content */}
         <div className="flex flex-col flex-1 overflow-x-hidden">
-          <h2 className="mt-10 text-3xl font-bold font-inter">All Products</h2>
-
-
+          <h2 className="mt-10 text-3xl font-ibm-plex" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>All Products</h2>
           <div className="mt-8 mb-10 me-10">
             <Selling />
           </div>

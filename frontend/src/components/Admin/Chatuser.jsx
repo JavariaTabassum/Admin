@@ -30,12 +30,9 @@ const Chatuser = () => {
             width: 300px;
           }
 
-          
-
-          /* Reduce size below 800px */
           @media (max-width: 800px) {
             .chat-box {
-              width: 300px;
+              width: 270px;
               padding: 0px;
               padding-left: 10px;
               padding-top: 8px;
@@ -58,7 +55,6 @@ const Chatuser = () => {
             }
           }
 
-          /* Hide chevron icon above 800px */
           @media (min-width: 801px) {
             .chevron-icon {
               display: none;
@@ -67,9 +63,8 @@ const Chatuser = () => {
         `}
       </style>
 
-      {/* Header with dropdown button */}
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-xl font-semibold">New Message</h1>
+        <h1 className="text-xl chat-box font-medium font-ibm-plex">New Message</h1>
         <button
           onClick={toggleDropdown}
           className="text-gray-500 focus:outline-none chevron-icon"
@@ -82,30 +77,25 @@ const Chatuser = () => {
         </button>
       </div>
 
-      {/* Chat List */}
-      <div className="dropdown-content">
+      <div className="dropdown-content font-poppins">
         {messages.map((msg) => (
           <div
             key={msg.id}
             className={`flex items-center gap-3 p-3 mb-2 rounded-lg cursor-pointer ${
-              msg.isActive ? "bg-pink-500 text-white" : "hover:bg-gray-100"
+              msg.isActive ? "bg-[rgba(236,0,140,1)] text-white" : "hover:bg-gray-100"
             }`}
           >
-            {/* Placeholder avatar */}
             <div className="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
 
-            {/* Message Info */}
             <div className="flex-1">
-              <h2 className={`font-semibold ${msg.isActive ? "text-white" : "text-gray-900"}`}>
+              <h2 className={`font-medium ${msg.isActive ? "text-white" : "text-gray-900"}`}>
                 {msg.name}
               </h2>
-              <p className={`text-sm ${msg.isActive ? "text-white" : "text-gray-600"}`}>
+              <p className={`text-sm ${msg.isActive ? "text-white" : "text-[rgba(111,117,126,1)]"}`}>
                 {msg.message}
               </p>
             </div>
-
-            {/* Timestamp */}
-            <span className={`text-xs ${msg.isActive ? "text-white" : "text-gray-400"}`}>
+            <span className={`text-xs ${msg.isActive ? "text-white" : "text-[rgba(111,117,126,1)]"}`}>
               {msg.time}
             </span>
           </div>

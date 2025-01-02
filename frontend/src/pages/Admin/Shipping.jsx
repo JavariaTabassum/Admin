@@ -32,11 +32,8 @@ const Shipping = () => {
       <div className=' fixed h-[full]'>
       <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
-     
 
-      {/* Main Content */}
       <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin">
-                {/* Menu Icon */}
                 <button
                     className="menu-icon mt-7 text-2xl text-gray-700"
                     onClick={toggleSidebar}
@@ -49,13 +46,12 @@ const Shipping = () => {
                 <div className="flex flex-col mt-10 me-8">
                     {/* Heading with Add New Button */}
                     <div className="flex justify-between items-center mb-6">
-                        <h2 className="text-3xl font-bold font-inter">Courier List</h2>
-                        <button className="bg-pink-500 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-pink-600 transition">
+                        <h2 className="text-3xl font-ibm-plex" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }} >Courier List</h2>
+                        <button className="bg-[rgba(236,0,140,1)] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-pink-600 transition">
                             + Add New
                         </button>
                     </div>
 
-                    {/* Table */}
                     <CourierList />
                 </div>
 

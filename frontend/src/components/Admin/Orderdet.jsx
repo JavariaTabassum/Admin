@@ -5,7 +5,6 @@ const OrderDetails = () => {
   const [orderData, setOrderData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Mock Data
   const mockData = {
     items: [
       {
@@ -46,11 +45,10 @@ const OrderDetails = () => {
   };
 
   useEffect(() => {
-    // Simulate API delay
     setTimeout(() => {
       setOrderData(mockData);
       setIsLoading(false);
-    }, 1000); // 1-second delay
+    }, 1000); 
   }, []);
 
   if (isLoading) {
@@ -84,10 +82,9 @@ const OrderDetails = () => {
         }
         `}
       </style>
-      <div className="max-w-6xl mx-auto col grid grid-cols-3 gap-6">
-        {/* Left Section - Order Items */}
+      <div className="max-w-6xl mx-auto col grid grid-cols-3 font-poppins gap-6">
         <div className="col-span-2 bg-white rounded-lg shadow p-6">
-          <h2 className="text-lg font-semibold mb-6">Order Items</h2>
+          <h2 className="text-lg font-semibold text-[rgba(23,23,37,1] mb-6">Order Items</h2>
           <div className="grid grid-cols-2 gap-4 column">
             {items.map((item, index) => (
               <div
@@ -132,7 +129,7 @@ const OrderDetails = () => {
                 <span className="font-medium">Total Order Value:</span>
                 <span className='[font-weight:550]'>₹{billingDetails.totalValue}</span>
               </div>
-              <div className='flex justify-between'>
+              <div className='flex justify-between mb-8'>
               <div className="flex flex-col">
                 <span className="font-medium">Courier:</span>
                 <span className=" font-semibold text-[18px] mt-2" style={{ color: 'rgba(23, 23, 37, 1)' }}>{billingDetails.courier}</span>
@@ -146,7 +143,7 @@ const OrderDetails = () => {
             
               <div>
                 <p>
-                  <span className="font-medium">Shipping Address:</span>
+                  <span className="font-medium mt-5">Shipping Address:</span>
                   <span className="block [font-weight:550] text-[18px] mt-2" style={{ color: 'rgba(23, 23, 37, 1)' }}>
                     {shippingDetails.address}
                   </span>
@@ -154,13 +151,9 @@ const OrderDetails = () => {
               </div>
             </div>
           </div>
-
-
         </div>
-
-        {/* Right Section - Customer Information */}
         <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold mb-6">Customer Information</h2>
+          <h2 className="text-xl font-medium mb-6">Customer Information</h2>
           <div className="flex flex-col items-center">
             <div className="relative mb-4">
               <img
@@ -171,19 +164,19 @@ const OrderDetails = () => {
             </div>
             <div className="text-center flex flex-col gap-4">
               <p className="text-lg font-semibold">{customerInfo.name}</p>
-              <p className="text-md text-gray-400">{customerInfo.email}</p>
-              <p className="text-md text-gray-400">{customerInfo.phone}</p>
+              <p className="text-md text-[rgba(141,152,175,1)]">{customerInfo.email}</p>
+              <p className="text-md text-[rgba(141,152,175,1)]">{customerInfo.phone}</p>
             </div>
             
           </div>
           <div className="mt-6 text-sm space-y-4">
               <div>
-                <p className="font-semibold mb-5">Shipping Address:</p>
-                <p className="text-gray-600 w-[150px]">{shippingDetails.address}</p>
+                <p className="font-medium mb-5">Shipping Address:</p>
+                <p className="text-[rgba(141,152,175,1)] w-[150px]">{shippingDetails.address}</p>
               </div>
               <div>
-                <p className="font-semibold mb-5">Billing Address:</p>
-                <p className="text-gray-600 w-[150px]">{billingDetails.billingAddress}</p>
+                <p className="font-medium mb-5">Billing Address:</p>
+                <p className="text-[rgba(141,152,175,1)] w-[150px]">{billingDetails.billingAddress}</p>
               </div>
             </div>
         </div>

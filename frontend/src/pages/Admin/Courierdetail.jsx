@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import Sidebar from '../../components/Admin/Sidebar';
-import SummaryCards from '../../components/Admin/SummaryCard';
-import Table from '../../components/Admin/Tablesales';
-import Graph from '../../components/Admin/Graph';
+import CourierComponent from '../../components/Admin/Courierdet';
+import { useParams } from 'react-router-dom'; 
 import { FaBars } from 'react-icons/fa';
 
-const Sales = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false); // State to control sidebar visibility
+const CourierDetail = () => {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false); 
+  const { courierCode } = useParams();
 
   const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
 
   return (
-    <div className="flex w-full min-h-screen bg-slate-100">
- <style>
+    <div className="flex w-full max-h-full bg-slate-100">
+      <style>
         {`
           .menu-icon {
             display: none; 
@@ -34,8 +34,8 @@ const Sales = () => {
       <div className=' fixed h-[full]'>
       <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
-
-      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin"> 
+     
+      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin">
           <button
             className="menu-icon mt-7 text-2xl text-gray-700"
             onClick={toggleSidebar}
@@ -44,18 +44,9 @@ const Sales = () => {
           </button>
 
         <div className="flex flex-col flex-1 overflow-x-hidden">
-          <h2 className="mt-10 text-3xl font-inter" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Orders</h2>
-
-          <div className="-mt-11 -ml-5">
-            <SummaryCards />
-          </div>
-
-          <div className="me-10">
-            <Graph />
-          </div>
-
-          <div className="mt-8 me-10">
-            <Table />
+          <h2 className="mt-10 text-3xl font-ibm-plex" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Courier Detail</h2>
+          <div className="mt-5 me-5">
+          <CourierComponent courierCode ={courierCode} />
           </div>
         </div>
       </div>
@@ -63,4 +54,4 @@ const Sales = () => {
   );
 };
 
-export default Sales;
+export default CourierDetail;

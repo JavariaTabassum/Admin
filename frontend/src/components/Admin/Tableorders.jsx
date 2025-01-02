@@ -1,18 +1,15 @@
-
-
-
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const OrderTable = () => {
   const [activeTab, setActiveTab] = useState("All Orders");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-
+  const navigate = useNavigate();
 
   const orders = [
     {
-      id: "#123245",
+      id: "123245",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -20,7 +17,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123248",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -28,7 +25,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123249",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -36,7 +33,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123246",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -44,7 +41,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123243",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -52,7 +49,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123240",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -60,7 +57,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123235",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -68,7 +65,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
+      id: "123241",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -76,47 +73,7 @@ const OrderTable = () => {
       status: "Delivered",
     },
     {
-      id: "#123245",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
-      date: "21-05-2024",
-      product: "High ghee tirunelvali halwa",
-      price: "₹300",
-      status: "Delivered",
-    },
-    {
-      id: "#123245",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
-      date: "21-05-2024",
-      product: "High ghee tirunelvali halwa",
-      price: "₹300",
-      status: "Delivered",
-    },
-    {
-      id: "#123245",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
-      date: "21-05-2024",
-      product: "High ghee tirunelvali halwa",
-      price: "₹300",
-      status: "Pending",
-    },
-    {
-      id: "#123245",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
-      date: "21-05-2024",
-      product: "High ghee tirunelvali halwa",
-      price: "₹300",
-      status: "Delivered",
-    },
-    {
-      id: "#123245",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
-      date: "21-05-2024",
-      product: "High ghee tirunelvali halwa",
-      price: "₹300",
-      status: "Delivered",
-    },
-    {
-      id: "#123245",
+      id: "123244",
       customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
@@ -146,14 +103,14 @@ const OrderTable = () => {
   };
 
   return (
-    <div className=" bg-white mx-auto p-4">
+    <div className="font-poppins bg-white mx-auto p-4">
       <div className="overflow-x-auto whitespace-nowrap border-b">
         <div className="flex justify-start space-x-4 px-2">
           {["All Orders", "Pending Orders", "Delivered Orders", "Cancelled Orders"].map((tab) => (
             <button
               key={tab}
               className={`text-lg py-4 px-6 whitespace-nowrap ${
-                activeTab === tab ? "border-b-4 border-pink-500 text-pink-500" : "text-gray-500"
+                activeTab === tab ? "border-b-4 border-[rgba(236,0,140,1)] text-[rgba(236,0,140,1)]" : "text-gray-500"
               }`}
               onClick={() => setActiveTab(tab)}
             >
@@ -167,15 +124,15 @@ const OrderTable = () => {
           className="table-auto w-full text-left border-collapse"
           style={{ tableLayout: "fixed" }}
         >
-          <thead>
+          <thead >
             <tr className=" border-b">
-              <th className="py-4 px-6 w-16">SL</th>
-              <th className="py-4 px-6 w-28">Order ID</th>
-              <th className="py-4 px-6 w-52">Customer name</th>
-              <th className="py-4 px-6 w-32 whitespace-nowrap">Date</th>
-              <th className="py-4 px-6 w-64">Product Name</th>
-              <th className="py-4 px-6 w-20">Price</th>
-              <th className="py-4 px-6 w-28">Status</th>
+              <th className="py-4 font-medium px-6 w-8">SL</th>
+              <th className="py-4 px-6 font-medium w-28 whitespace-nowrap">Order ID</th>
+              <th className="py-4 px-6 font-medium w-52">Customer name</th>
+              <th className="py-4 px-6 font-medium w-32 whitespace-nowrap">Date</th>
+              <th className="py-4 px-6 font-medium w-64">Product Name</th>
+              <th className="py-4 px-6 font-medium w-20">Price</th>
+              <th className="py-4 px-6 font-medium w-28">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -190,8 +147,8 @@ const OrderTable = () => {
                 .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                 .map((order, index) => (
                   <tr key={index} className="border-b hover:bg-gray-50">
-                    <td className="py-4 px-6">{index + 1}</td>
-                    <td className="py-4 px-6">{order.id}</td>
+                    <td className="py-4 px-6 font-medium">{index + 1}</td>
+                    <td className="py-4 px-6 font-medium" onClick={() => navigate(`/order/${order.id}`)}>{order.id}</td>
                     <td className="py-4 px-6 flex items-center space-x-3">
                       <img src={order.customer.avatar} alt={order.customer.name} className="w-8 h-8 rounded-full" />
                       <div>
@@ -202,7 +159,7 @@ const OrderTable = () => {
                     <td className="py-4 px-6 whitespace-nowrap">{order.date}</td>
                     <td className="py-4 px-6">{order.product}</td>
                     <td className="py-4 px-6">{order.price}</td>
-                    <td className={`py-4 px-6 font-semibold ${getStatusColor(order.status)}`}>{order.status}</td>
+                    <td className={`py-4 px-6 font-medium ${getStatusColor(order.status)}`}>{order.status}</td>
                   </tr>
                 ))
             )}
@@ -210,17 +167,14 @@ const OrderTable = () => {
         </table>
       </div>
 
-      {/* Pagination */}
       <div className="flex flex-col md:flex-row justify-between items-center mt-6">
-  {/* Display Line */}
   <p className="text-sm text-gray-500 mb-2 md:mb-0">
     Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
     {Math.min(currentPage * itemsPerPage, orders.length)} of {orders.length} items
   </p>
 
-  {/* Pagination */}
   <div className="flex space-x-2">
-    {/* Left Arrow */}
+
     <button
       className={`px-4 py-2 rounded-full ${currentPage === 1 ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"}`}
       onClick={() => currentPage > 1 && handlePageClick(currentPage - 1)}
@@ -229,7 +183,6 @@ const OrderTable = () => {
       ←
     </button>
 
-    {/* Current Page and Next Page */}
     {[currentPage, currentPage + 1].map(
       (page, index) =>
         page <= totalPages && (
@@ -245,7 +198,6 @@ const OrderTable = () => {
         )
     )}
 
-    {/* Right Arrow */}
     <button
       className={`px-4 py-2 rounded-full ${
         currentPage === totalPages ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"

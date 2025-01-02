@@ -42,9 +42,9 @@ const Order = () => {
           </button>
 
         <div className="flex flex-col flex-1 overflow-x-hidden">
-          <h2 className="mt-10 text-3xl font-bold font-inter">Order</h2>
+          <h2 className="mt-10 text-3xl font-ibm-plex"style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Order</h2>
         </div>
-        <div className='mt-5'>
+        <div className='mt-5 me-5'>
             <Tableorder />
         </div>
       </div>

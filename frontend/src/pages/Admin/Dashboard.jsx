@@ -35,10 +35,7 @@ const Dashboard = () => {
       <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       </div>
      
-
-      {/* Main Content */}
-      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin"> {/* Added margin-left here */}
-        {/* Menu Icon (Visible below 1050px) */}
+      <div className="flex flex-col flex-1 overflow-x-hidden ml-4 margin">
           <button
             className="menu-icon mt-7 text-2xl text-gray-700"
             onClick={toggleSidebar}
@@ -46,10 +43,8 @@ const Dashboard = () => {
             <FaBars />
           </button>
 
-
-        {/* Dashboard Content */}
         <div className="flex flex-col flex-1 overflow-x-hidden">
-          <h2 className="mt-10 text-3xl font-bold font-inter">Dashboard</h2>
+          <h2 className="mt-10 text-3xl  font-inter" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Dashboard</h2>
 
           <div className="-mt-11 -ml-5">
             <SummaryCards />

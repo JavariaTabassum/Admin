@@ -111,79 +111,76 @@ const Tablestatus = () => {
   const getBackgroundColor = (category) => {
     switch (category) {
       case 'Undergarments':
-        return 'bg-yellow-600'; // Dark yellow
+        return 'bg-yellow-600';
       case 'Cosmetics':
-        return 'bg-pink-600'; // Dark pink
+        return 'bg-pink-600'; 
       case 'Furniture':
-        return 'bg-green-700'; // Dark green
+        return 'bg-green-700'; 
       case 'Electronics':
-        return 'bg-blue-700'; // Dark blue
+        return 'bg-blue-700';
       case 'Accessories':
-        return 'bg-purple-700'; // Dark purple
+        return 'bg-purple-700'; 
       case 'Fragrances':
-        return 'bg-red-700'; // Dark red
+        return 'bg-red-700'; 
       default:
-        return 'bg-gray-600'; // Default dark gray
+        return 'bg-gray-600';
     }
   };
 
   const getStatusTextColor = (status) => {
     switch (status) {
       case 'Pending':
-        return 'text-yellow-500'; // Yellow for pending
+        return 'text-yellow-500'; 
       case 'Approved':
-        return 'text-green-500'; // Green for approved
+        return 'text-green-500'; 
       case 'Rejected':
-        return 'text-red-500'; // Red for rejected
+        return 'text-red-500'; 
       default:
-        return 'text-gray-500'; // Default gray
+        return 'text-gray-500'; 
     }
   };
 
   const getProductImage = (product) => {
-    return 'https://via.placeholder.com/50'; // Placeholder for now
+    return 'https://via.placeholder.com/50';
   };
 
   return (
     <div className="mb-8 me-8">
-      {/* Product Table */}
       <div className="overflow-x-auto rounded-[30px] border border-gray-300 mt-6 md:mt-10">
       <table
           className="table-auto w-full text-left border-collapse"
           style={{ tableLayout: "fixed" }}
         >
           <thead>
-            <tr className="w-full text-left text-gray-600 uppercase text-sm border-b-2 border-gray-200">
+            <tr className="w-full text-left text-[rgba(5,15,36,1)] font-ibm-plex uppercase text-sm border-b-2 border-gray-200">
             <th className="py-8 px-4 w-[200px] whitespace-nowrap">Product</th> 
               <th className="py-8 px-4 w-[120px] whitespace-nowrap">ID no</th>
               <th className="py-8 px-4 w-[100px] whitespace-nowrap">Orders</th>
               <th className="py-8 px-4 w-[100px] whitespace-nowrap">Price</th>
               <th className="py-8 px-4 w-[150px] whitespace-nowrap">Category</th>
               <th className="py-8 px-4 w-[150px] whitespace-nowrap">Stock</th>
-              <th className="py-8 px-4 w-[150px] whitespace-nowrap">Status</th> {/* Status Column */}
+              <th className="py-8 px-4 w-[150px] whitespace-nowrap">Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='font-poppins'>
             {currentProducts.map((product) => (
               <tr key={product.id} className="border-b border-gray-200 hover:bg-gray-100 whitespace-nowrap">
                 <td className="py-4 px-4 flex items-center space-x-4 w-[300px]">
-                  {/* Image and product details */}
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center ${getBackgroundColor(product.category)}`}>
                     <img src={getProductImage(product)} alt={product.name} className="w-8 h-8 rounded-full object-cover" />
                   </div>
-                  <div className="truncate"> {/* Prevent text from overflowing */}
-                    <p className="text-lg font-semibold truncate">{product.name}</p>
+                  <div className="truncate"> 
+                    <p className="text-lg  truncate">{product.name}</p>
                     <p className="text-sm text-gray-500 truncate">{product.description}</p>
                   </div>
                 </td>
-                <td className="py-4 px-4">{product.id}</td>
-                <td className="py-4 px-4">{product.orders}</td>
-                <td className="py-4 px-4">${product.price}</td>
-                <td className="py-4 px-4">{product.category}</td>
-                <td className="py-4 px-4">{product.stock}</td>
+                <td className="py-4 px-4 text-gray-500">{product.id}</td>
+                <td className="py-4 px-4 text-gray-500">{product.orders}</td>
+                <td className="py-4 px-4 text-gray-500">${product.price}</td>
+                <td className="py-4 px-4 text-gray-500">{product.category}</td>
+                <td className="py-4 px-4 text-gray-500">{product.stock}</td>
                 <td className="py-4 px-4">
-                  {/* Apply text color for status */}
-                  <span className={`font-semibold ${getStatusTextColor(product.status)}`}>
+                  <span className={`font-medium ${getStatusTextColor(product.status)}`}>
                     {product.status}
                   </span>
                 </td>
@@ -192,15 +189,12 @@ const Tablestatus = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Pagination Section */}
       <div className="flex justify-between items-center mt-6">
-        {/* Product Count */}
+
         <p className="text-sm text-gray-500">
           Showing {Math.min(indexOfLastProduct, products.length)} of {products.length} products
         </p>
 
-        {/* Pagination */}
         <div className="flex items-center space-x-4 text-gray-600">
           <button
             onClick={handlePrevPage}
@@ -210,7 +204,7 @@ const Tablestatus = () => {
             Prev
           </button>
 
-          {/* Pagination Numbers */}
+
           <div className="flex items-center space-x-3">
             {Array.from({ length: totalPages }, (_, index) => (
               <button
