@@ -20,7 +20,7 @@ const Chatuser = () => {
   };
 
   return (
-    <div className="chat-box mx-auto bg-white rounded-lg shadow-lg p-4">
+    <div className="chat-box mx-auto bg-white rounded-lg  shadow-lg p-4">
       <style>
         {`
           .dropdown-content::-webkit-scrollbar {
@@ -54,17 +54,7 @@ const Chatuser = () => {
             }
           }
 
-          @media (min-width: 1050px) {
-            .dropdown-content {
-              max-height: 550px;
-              overflow-y: auto;
-            }
-          }
-          @media (max-width: 1050px) and (min-width: 801px) {
-            .dropdown-content {
-              max-height: 523px;
-              overflow-y: auto;
-            }
+          @media (min-width: 801px) {
               .chevron-icon {
               display: none;
             }
@@ -86,7 +76,7 @@ const Chatuser = () => {
         </button>
       </div>
 
-      <div className="dropdown-content hght font-poppins">
+      <div className="dropdown-content overflow-y-auto h-[500px] font-poppins">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -114,4 +104,3 @@ const Chatuser = () => {
 };
 
 export default Chatuser;
-
