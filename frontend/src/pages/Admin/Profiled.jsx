@@ -43,9 +43,10 @@ const Profiled = () => {
 
         <div className="flex flex-col flex-1 overflow-x-hidden">
           <h2 className="mt-10 text-3xl font-ibm-plex"  style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Profile</h2>
-        </div>
+        
         <div className='me-5'>
             <Profileformed />
+        </div>
         </div>
       </div>
     </div>

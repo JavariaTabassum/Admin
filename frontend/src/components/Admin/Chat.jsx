@@ -60,6 +60,18 @@ const ChatWindow = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto h-full font-poppins bg-white rounded-lg shadow-lg flex flex-col">
+      <style>
+        {
+          `.chat::-webkit-scrollbar {
+            width: 3px;
+          }
+          .chat:hover::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+          }
+          `
+        }
+      </style>
       {/* Header */}
       <div className="flex items-center gap-4 p-4 border-b">
         <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
@@ -74,43 +86,44 @@ const ChatWindow = () => {
           <FaTrashAlt size={18} />
         </button>
       </div>
+<div
+  className="flex-grow p-4 overflow-y-auto chat"
+>
+  <div className="flex justify-center mb-4">
+    <span className="px-4 py-1 bg-green-500 text-white text-sm rounded-full">
+      Yesterday
+    </span>
+  </div>
 
-      {/* Chat Messages */}
-      <div className="flex-grow p-4 overflow-y-auto h-full min-h-[300px] md:h-96 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-        <div className="flex justify-center mb-4">
-          <span className="px-4 py-1 bg-green-500 text-white text-sm rounded-full">
-            Yesterday
-          </span>
-        </div>
-
-        {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`flex flex-col mb-4 ${
-              msg.senderType === "self" ? "items-end" : "items-start"
-            }`}
-          >
-            <div className="text-xs text-gray-500 mb-1">
-              {msg.sender} - {msg.time}
-            </div>
-            <div
-              className={`flex ${
-                msg.senderType === "self" ? "justify-end" : "justify-start"
-              } gap-2`}
-            >
-              {msg.senderType === "other" && (
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex-shrink-0"></div>
-              )}
-              <div className="max-w-sm p-3 rounded-lg shadow-md bg-gray-200 text-gray-800">
-                <p className="text-sm">{msg.message}</p>
-              </div>
-              {msg.senderType === "self" && (
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex-shrink-0"></div>
-              )}
-            </div>
-          </div>
-        ))}
+  {messages.map((msg) => (
+    <div
+      key={msg.id}
+      className={`flex flex-col mb-4 ${
+        msg.senderType === "self" ? "items-end" : "items-start"
+      }`}
+    >
+      <div className="text-xs text-gray-500 mb-1">
+        {msg.sender} - {msg.time}
       </div>
+      <div
+        className={`flex ${
+          msg.senderType === "self" ? "justify-end" : "justify-start"
+        } gap-2`}
+      >
+        {msg.senderType === "other" && (
+          <div className="w-8 h-8 bg-gray-100 rounded-full flex-shrink-0"></div>
+        )}
+        <div className="max-w-sm p-3 rounded-lg shadow-md bg-gray-200 text-gray-800">
+          <p className="text-sm">{msg.message}</p>
+        </div>
+        {msg.senderType === "self" && (
+          <div className="w-8 h-8 bg-gray-100 rounded-full flex-shrink-0"></div>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
 
       {/* Input Area */}
       <div className="relative flex items-center gap-2 p-4 border-t bg-white">

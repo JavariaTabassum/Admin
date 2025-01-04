@@ -11,8 +11,6 @@ const Chatuser = () => {
     { id: 6, name: "Natalia", message: "will do....", time: "4 Day ago", isActive: false },
     { id: 7, name: "Emillio", message: "Thanks...", time: "4 Day ago", isActive: false },
     { id: 8, name: "Adriana", message: "Will back soon...", time: "7 Day ago", isActive: false },
-    { id: 9, name: "Leon", message: "Thanks..", time: "9 Day ago", isActive: false },
-    { id: 10, name: "Bruno", message: "sure! I will check", time: "9 Day ago", isActive: false },
   ]);
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -25,28 +23,28 @@ const Chatuser = () => {
     <div className="chat-box mx-auto bg-white rounded-lg shadow-lg p-4">
       <style>
         {`
-          /* Default width for the chat box */
-          .chat-box {
-            width: 300px;
+          .dropdown-content::-webkit-scrollbar {
+            width: 3px;
           }
-
+          .dropdown-content:hover::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+          }
+            
           @media (max-width: 800px) {
-            .chat-box {
+             .chat-box {
               width: 270px;
               padding: 0px;
               padding-left: 10px;
               padding-top: 8px;
               padding-right: 10px;
-              
-            }
+             }
 
             .dropdown-content {
-              max-height: ${isDropdownVisible ? "300px" : "0"};
-              overflow-y: auto;
-              transition: max-height 0.3s ease;
-              z-index: -1;
+            max-height: ${isDropdownVisible ? "300px" : "0"};
+            overflow-y: auto;
+            transition: max-height 0.3s ease;
             }
-
             .rotate-180 {
               transform: rotate(180deg);
             }
@@ -56,8 +54,18 @@ const Chatuser = () => {
             }
           }
 
-          @media (min-width: 801px) {
-            .chevron-icon {
+          @media (min-width: 1050px) {
+            .dropdown-content {
+              max-height: 550px;
+              overflow-y: auto;
+            }
+          }
+          @media (max-width: 1050px) and (min-width: 801px) {
+            .dropdown-content {
+              max-height: 523px;
+              overflow-y: auto;
+            }
+              .chevron-icon {
               display: none;
             }
           }
@@ -65,7 +73,7 @@ const Chatuser = () => {
       </style>
 
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-xl chat-box font-medium font-ibm-plex">New Message</h1>
+        <h1 className="text-xl font-medium font-ibm-plex">New Message</h1>
         <button
           onClick={toggleDropdown}
           className="text-gray-500 focus:outline-none chevron-icon"
@@ -78,7 +86,7 @@ const Chatuser = () => {
         </button>
       </div>
 
-      <div className="dropdown-content font-poppins">
+      <div className="dropdown-content hght font-poppins">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -87,7 +95,6 @@ const Chatuser = () => {
             }`}
           >
             <div className="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
-
             <div className="flex-1">
               <h2 className={`font-medium ${msg.isActive ? "text-white" : "text-gray-900"}`}>
                 {msg.name}
@@ -107,3 +114,4 @@ const Chatuser = () => {
 };
 
 export default Chatuser;
+
