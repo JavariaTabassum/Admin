@@ -146,7 +146,7 @@ const Tablestatus = () => {
 
   return (
     <div className="mb-8 me-8">
-      <div className="overflow-x-auto rounded-[30px] border border-gray-300 mt-6 md:mt-10">
+      <div className="overflow-x-auto rounded-[30px] bg-white border border-gray-300 mt-6 md:mt-10">
       <table
           className="table-auto w-full text-left border-collapse"
           style={{ tableLayout: "fixed" }}
