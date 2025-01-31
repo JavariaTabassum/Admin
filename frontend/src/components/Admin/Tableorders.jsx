@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const OrderTable = () => {
   const [activeTab, setActiveTab] = useState("All Orders");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
   const itemsPerPage = 10;
   const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ const OrderTable = () => {
     },
     {
       id: "123248",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174570", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -26,7 +27,7 @@ const OrderTable = () => {
     },
     {
       id: "123249",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174572", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -34,7 +35,7 @@ const OrderTable = () => {
     },
     {
       id: "123246",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174573", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -42,7 +43,7 @@ const OrderTable = () => {
     },
     {
       id: "123243",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174574", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -50,7 +51,7 @@ const OrderTable = () => {
     },
     {
       id: "123240",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174575", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -58,7 +59,7 @@ const OrderTable = () => {
     },
     {
       id: "123235",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174576", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -66,15 +67,23 @@ const OrderTable = () => {
     },
     {
       id: "123241",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      customer: { name: "Esther Howard", id: "C0174577", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
       status: "Delivered",
     },
     {
-      id: "123244",
-      customer: { name: "Esther Howard", id: "C0174569", avatar: "https://i.pravatar.cc/40?img=1" },
+      id: "123242",
+      customer: { name: "Esther Howard", id: "C0174577", avatar: "https://i.pravatar.cc/40?img=1" },
+      date: "21-05-2024",
+      product: "High ghee tirunelvali halwa",
+      price: "₹300",
+      status: "Delivered",
+    },
+    {
+      id: "123243",
+      customer: { name: "Esther Howard", id: "C0174577", avatar: "https://i.pravatar.cc/40?img=1" },
       date: "21-05-2024",
       product: "High ghee tirunelvali halwa",
       price: "₹300",
@@ -102,9 +111,26 @@ const OrderTable = () => {
     }
   };
 
+  const filteredOrders = orders.filter(
+    (order) =>
+      order.id.includes(searchQuery) ||
+      order.customer.id.includes(searchQuery) ||
+      order.date.includes(searchQuery)
+  );
+
   return (
-    <div className="font-poppins bg-white mx-auto p-4">
-      <div className="overflow-x-auto whitespace-nowrap border-b">
+    <div className="font-poppins mx-auto p-4">
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search by Order ID, Customer ID, or Date"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-1/2 py-4 px-5 border rounded-full shadow-sm"
+        />
+      </div>
+      <div className="bg-white">
+      <div className="whitespace-nowrap border-b">
         <div className="flex justify-start space-x-4 px-2">
           {["All Orders", "Pending Orders", "Delivered Orders", "Cancelled Orders"].map((tab) => (
             <button
@@ -136,18 +162,18 @@ const OrderTable = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.length === 0 ? (
+            {filteredOrders.length === 0 ? (
               <tr>
                 <td className="py-4 px-6 text-center" colSpan="7">
                   No orders available.
                 </td>
               </tr>
             ) : (
-              orders
+              filteredOrders
                 .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                 .map((order, index) => (
                   <tr key={index} className="border-b hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">{index + 1}</td>
+                    <td className="py-4 px-6 font-medium">{(currentPage - 1) * itemsPerPage + index + 1}</td>
                     <td className="py-4 px-6 font-medium" onClick={() => navigate(`/order/${order.id}`)}>{order.id}</td>
                     <td className="py-4 px-6 flex items-center space-x-3">
                       <img src={order.customer.avatar} alt={order.customer.name} className="w-8 h-8 rounded-full" />
@@ -208,6 +234,7 @@ const OrderTable = () => {
       →
     </button>
   </div>
+</div>
 </div>
 
     </div>

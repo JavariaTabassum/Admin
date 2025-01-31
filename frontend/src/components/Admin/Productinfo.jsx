@@ -14,12 +14,16 @@ import Trash from '../../images/trash.png';
 
 const ProductForm = () => {
     const [productName, setProductName] = useState('');
-    const [weight, setWeight] = useState(2);
+    const [weight, setWeight] = useState('');
     const [category, setCategory] = useState('');
-    const [color, setColor] = useState(3);
+    const [color, setColor] = useState('');
     const [brand, setBrand] = useState(''); 
     const [cupSize, setCupSize] = useState(''); 
     const [size, setSize] = useState('');
+    const [price, setPrice] = useState('');
+    const [delivery, setDelivery] = useState('');
+    const [discount, setDiscount] = useState('');
+    const [tax, setTax] = useState('');
     const [confirmDelete, setConfirmDelete] = useState(false);
 
     const handleSave = () => {
@@ -141,37 +145,23 @@ const ProductForm = () => {
                         {/* Category Dropdown */}
                         <div className="relative">
                             <label className="block text-gray-700 mb-5 font-poppins">Category</label>
-                            <select
+                            <input
+                                type="text"
                                 value={category}
                                 onChange={(e) => setCategory(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value="Clothing">Clothing</option>
-                                <option value="Electronics">Electronics</option>
-                                <option value="Furniture">Furniture</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
 
                         {/* Color Dropdown */}
                         <div className="relative">
                             <label className="block text-gray-700 mb-5 font-poppins">Color</label>
-                            <select
+                            <input
+                                type="text"
                                 value={color}
                                 onChange={(e) => setColor(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value={1}>Red</option>
-                                <option value={2}>Blue</option>
-                                <option value={3}>Green</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
                     </div>
                     <div className="flex justify-end mt-6 center">
@@ -196,7 +186,7 @@ const ProductForm = () => {
                         <div className="flex items-center justify-between rounded-lg p-4 border border-gray-300">
                             <div className="flex items-center space-x-4">
                                 <img
-                                    src="/path-to-image.png" // Replace with the actual image path
+                                    src="/path-to-image.png" 
                                     alt=""
                                     className="w-12 h-12 rounded-full"
                                 />
@@ -219,7 +209,7 @@ const ProductForm = () => {
                         <div className="flex items-center justify-between rounded-lg p-4 border border-gray-300">
                             <div className="flex items-center space-x-4">
                                 <img
-                                    src="/path-to-image.jpg" // Replace with the actual image path
+                                    src="/path-to-image.jpg" 
                                     alt=""
                                     className="w-12 h-12 rounded-full"
                                 />
@@ -253,76 +243,48 @@ const ProductForm = () => {
 
                     {/* Grid Layout for Form Fields */}
                     <div className="grid grid-cols-2 gap-4 col">
-                        {/* Name Input */}
+                        {/* Brandsize Input */}
                         <div className='relative'>
                             <label className="block text-gray-700 mb-5 font-poppins">Brand SIze </label>
-                            <select
+                            <input
+                                type="number"
                                 value={brand}
                                 onChange={(e) => setBrand(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value="30">30</option>
-                                <option value="32">32</option>
-                                <option value="33">33</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
 
                         {/* Weight Input */}
                         <div className='relative'>
                             <label className="block text-gray-700 mb-5 font-poppins">Cup size</label>
-                            <select
+                            <input
+                                type="text"
                                 value={cupSize}
                                 onChange={(e) => setCupSize(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value="a">a</option>
-                                <option value="b">b</option>
-                                <option value="c">c</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
 
                         {/* Category Dropdown */}
                         <div className="relative">
                             <label className="block text-gray-700 mb-5 font-poppins">Size</label>
-                            <select
+                            <input
+                                type="text"
                                 value={size}
                                 onChange={(e) => setSize(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
 
                         {/* Color Dropdown */}
                         <div className="relative">
                             <label className="block text-gray-700 mb-5 font-poppins">Color</label>
-                            <select
+                            <input
+                                type="text"
                                 value={color}
                                 onChange={(e) => setColor(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value={1}>Red</option>
-                                <option value={2}>Blue</option>
-                                <option value={3}>Green</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
                     </div>
                     <div className="flex justify-end mt-6 center">
@@ -340,62 +302,44 @@ const ProductForm = () => {
 
                     {/* Grid Layout for Form Fields */}
                     <div className="grid grid-cols-2 gap-4 col">
-                        {/* Name Input */}
                         <div>
                             <label className="block text-gray-700 mb-5 font-poppins">Price</label>
                             <input
                                 type="text"
-                                value={productName}
-                                onChange={(e) => setProductName(e.target.value)}
+                                value={price}
+                                onChange={(e) => setPrice(e.target.value)}
                                 className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
                             />
                         </div>
 
-                        {/* Weight Input */}
                         <div className='relative'>
                             <label className="block text-gray-700 mb-5 font-poppins">Delivery Charges</label>
-                            <select
-                                value={cupSize}
-                                onChange={(e) => setCupSize(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value="100">100</option>
-                                <option value="150">200</option>
-                                <option value="200">150</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                            <input
+                                type="number"
+                                value={delivery}
+                                onChange={(e) => setDelivery(e.target.value)}
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
 
-                        {/* Category Dropdown */}
                         <div>
                             <label className="block text-gray-700 mb-5 font-poppins">Available Discount</label>
                             <input
                                 type="text"
-                                value={productName}
-                                onChange={(e) => setProductName(e.target.value)}
+                                value={discount}
+                                onChange={(e) => setDiscount(e.target.value)}
                                 className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
                             />
                         </div>
 
-                        {/* Color Dropdown */}
                         <div className="relative">
                             <label className="block text-gray-700 mb-5 font-poppins">Taxr</label>
-                            <select
-                                value={color}
-                                onChange={(e) => setColor(e.target.value)}
-                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600 appearance-none"
-                            >
-                                <option value="100">100</option>
-                                <option value="150">150</option>
-                                <option value="200">200</option>
-                            </select>
-                            {/* Downward Arrow */}
-                            <div className="absolute inset-y-0 right-4 top-10 flex items-center pointer-events-none">
-                                <FaChevronDown className="text-gray-500" />
-                            </div>
+                            <input
+                                type="number"
+                                value={tax}
+                                onChange={(e) => setTax(e.target.value)}
+                                className="w-full px-7 py-4 border rounded-[40px] bg-gray-100 text-gray-600"
+                            />
                         </div>
                     </div>
                     <div className="flex justify-end mt-6 center">

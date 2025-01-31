@@ -46,7 +46,7 @@ const Dashboard = () => {
         <div className="flex flex-col flex-1 overflow-x-hidden">
           <h2 className="mt-10 text-3xl  font-inter" style={{ color: "rgba(5, 15, 36, 1)", fontWeight: "500" }}>Dashboard</h2>
 
-          <div className="-mt-11 -ml-10">
+          <div className="mt-5 -ml-10">
             <SummaryCards />
           </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaPen, FaTrashAlt, FaEllipsisH } from 'react-icons/fa';
 
-const LatestOrders = () => {
+const LatestOrders = ({ searchQuery })=> {
   const orders = [
     {
       orderId: "#53200002",
@@ -147,6 +147,12 @@ const LatestOrders = () => {
     }
   ];
 
+  const filteredOrders = orders.filter(
+    (order) =>
+      order.customer.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      order.date.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const getStatusColor = (status) => {
     switch (status) {
       case "Pending":
@@ -189,7 +195,8 @@ const LatestOrders = () => {
             </tr>
           </thead>
           <tbody className="text-[rgba(142,149,169,1)]">
-            {orders.map((order, index) => (
+          {filteredOrders.length > 0 ? (
+              filteredOrders.map((order, index) => (
               <tr key={index} className="border-b">
                 <td className="p-3">{order.orderId}</td>
                 <td className="p-3 flex items-center space-x-3" style={{width: "200px"}}> {/* Fixed width */}
@@ -230,7 +237,14 @@ const LatestOrders = () => {
                   </div>
                 </td>
               </tr>
-            ))}
+            ))
+          ) : (
+            <tr>
+                <td colSpan="9" className="text-center p-4 text-gray-500">
+                  No orders found
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

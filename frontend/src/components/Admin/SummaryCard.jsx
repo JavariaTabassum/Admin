@@ -89,23 +89,34 @@ const SummaryCards = () => {
   ];
 
   return (
-    <div className="summary-cards-container flex space-x-6 p-6 mt-20 flex-wrap">
+    <div className="summary-cards-container flex space-x-6 p-6 ">
       <style>
         {`
-          /* Custom CSS for Summary Cards */
           .summary-cards-container {
             display: flex;
             gap: 1.5rem;
-            flex-wrap: wrap;
           }
 
           .summary-card {
             width: 300px;
           }
+          @media (max-width: 1200px) and (min-width: 1050px) {
+            .summary-cards-container {
+             flex-wrap: wrap;
+        }
+             .summary-cards-container {
+              justify-content: center;
+            }
 
-          @media (max-width: 1050px) {
+            .summary-card {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+             @media (max-width: 900px){
             .summary-cards-container {
               justify-content: center;
+              flex-wrap:wrap;
             }
 
             .summary-card {

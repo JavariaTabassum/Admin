@@ -87,7 +87,7 @@ const ChatWindow = () => {
         </button>
       </div>
 <div
-  className="flex-grow p-4 overflow-y-auto  chat"
+  className="flex-grow p-4 overflow-y-auto  chat" 
 >
   <div className="flex justify-center mb-4">
     <span className="px-4 py-1 bg-green-500 text-white text-sm rounded-full">
@@ -123,8 +123,6 @@ const ChatWindow = () => {
     </div>
   ))}
 </div>
-
-
       {/* Input Area */}
       <div className="relative flex items-center gap-2 p-4 border-t bg-white">
         <button className="text-pink-600 hover:text-pink-700">
